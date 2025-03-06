@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.home-content{
+    height: 150vh;
+
+}
+.home-side{
+    width: 13em;
+    margin-left: 30px;
+    border-right: 1px solid black;
+    height: 150vh;
+ 
+}
+
+.home-user img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-top: 20px;
+ 
+}
+.home-side h3{
+    margin-top: 10px;
+}
+
+.home-side-two{
+    margin-top: 20px;   
+}
+
+.home-side-three{
+    margin-top: 20px;   
+}
+
+.home-side-four{
+    margin-top: 20px; 
+    margin-bottom: 10px;
+
+}
+.home-side-four::after {
+    content: "";
+    position: absolute;
+    bottom:1;
+    margin-top: 20px;
+    left: -30px; /* Moves it left to ignore the margin */
+    width: calc(36% + 30px); /* Extends past the margin */
+    height: 0.3px;
+    background-color: rgb(176, 168, 168);
+}
+.suggestion-part h3{
+    margin-top: 40px;
+}
+
+.suggestion-images {
+    padding-top: 40px;
+ 
+}
+
+.suggestion-images img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: block;
+    
+    margin-bottom: 30px;
+}

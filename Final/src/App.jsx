@@ -5,6 +5,7 @@ import Layout from './Components/Layout'
 import LoginPage from './Components/LoginPage'
 import Register from './Components/Register'
 import Home from './Components/Home'
+import Appetizer from './Components/Appetizer'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -15,6 +16,8 @@ function App() {
 
 <Route path='/' element={<Layout/>}>
 <Route path='/Home'  index element={<Home/>}/>
+<Route path='/appetizer'  index element={<Appetizer/>}/>
+
 
 
 </Route>

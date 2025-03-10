@@ -11,7 +11,7 @@ function Navbar() {
 
 <div className='nav-list'>
 <ul>
-   <Link className='Links'><li>Home</li></Link> 
+   <Link to='/Home' className='Links'><li>Home</li></Link> 
   <Link className='Links'><li>Cart</li></Link>  
   <Link className='Links'><li>My Orders</li></Link>  
 

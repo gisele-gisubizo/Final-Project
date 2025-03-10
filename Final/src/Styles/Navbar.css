@@ -7,7 +7,7 @@
 .nav-content{
  
 
- background-color: rgb(235, 236, 235);
+ background-color: rgb(255, 255, 255);
  height: 40px;
 
  
@@ -23,7 +23,7 @@
     list-style: none;  
     display: flex;
     gap: 30px;
-    margin-left: 59em;
+    margin-left: 55em;
     margin-top: -44px;
 }
 
@@ -40,23 +40,6 @@
   
 }
 
-
-.nav-input input{
-    width: 15em;
-    height: 40px;
-    border-radius: 10px;
-    background-color: rgb(10, 67, 10);
-     border: 1px solid rgb(248, 244, 244); /* Adds a blue border */
-    outline: none;
-    color: white;
-    margin-top: 30px;
-    margin-left: 70px;
-}
-
-.nav-input input::placeholder {
-    color: rgb(255, 255, 255); /* Changes the placeholder color */
-    opacity: 0.3;
-  }
 .Links{
     text-decoration: none;
 }

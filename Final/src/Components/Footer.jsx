@@ -4,6 +4,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
+import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 function Footer() {
   return (
     <div className='footer-content'>
@@ -22,16 +23,21 @@ function Footer() {
 </ul>
 
  </div>
-
- <div className="company">
+ <div className="contact-info">
 <h4>Contact</h4>
-<ul>
-    <li>+1 234 567 890</li>
-    <li>info@foodHub.com</li>
-    <li>123 Food Street,Ny</li>
-</ul>
-
- </div>
+      <div className="contact-item">
+        <FaPhone className="contact-icon" />
+        <p>+123 456 7890</p>
+      </div>
+      <div className="contact-item">
+        <FaEnvelope className="contact-icon" />
+        <p>info@example.com</p>
+      </div>
+      <div className="contact-item">
+        <FaMapMarkerAlt className="contact-icon" />
+        <p>123 Main Street, City, Country</p>
+      </div>
+    </div>
 
  <div className='footer-tittle'>
  <h3>Follow Us</h3>

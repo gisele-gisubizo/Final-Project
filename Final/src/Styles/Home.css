@@ -1,68 +1,181 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.home-content{
-    height: 150vh;
 
-}
-.home-side{
-    width: 13em;
-    margin-left: 30px;
-    border-right: 1px solid black;
-    height: 150vh;
- 
-}
 
-.home-user img{
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    margin-top: 20px;
- 
+html, body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    width: 100%;
 }
-.home-side h3{
-    margin-top: 10px;
+.home-container{
+    background-color: #FFF4E6;
+    height: 40em;
+    font-family: 'Roboto', sans-serif;
 }
-
-.home-side-two{
-    margin-top: 20px;   
+.home-part1 h3{
+   padding-top: 190px;
+   margin-left: 70px;
+   font-size: 35px;
+   font-weight: bold;
+}
+.home-part1 p{
+    margin-left: 70px;
+    font-weight: lighter;
+    font-size: 14px;
+    color: rgb(66, 64, 64);
 }
 
-.home-side-three{
-    margin-top: 20px;   
+.home-image img{
+    width: 470px;
+    height: 470px;
+    border-radius: 10px;
+    margin-left: 44em;
+    margin-top: -210px;
+}
+.view-menu-btn {
+    background-color: rgb(254, 71, 4);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  
+   
+}
+.home-button{
+    margin-left: 10em;
+    margin-top: -15em;
 }
 
-.home-side-four{
-    margin-top: 20px; 
-    margin-bottom: 10px;
-
-}
-.home-side-four::after {
-    content: "";
-    position: absolute;
-    bottom:1;
-    margin-top: 20px;
-    left: -30px; /* Moves it left to ignore the margin */
-    width: calc(36% + 30px); /* Extends past the margin */
-    height: 0.3px;
-    background-color: rgb(176, 168, 168);
-}
-.suggestion-part h3{
-    margin-top: 40px;
+.view-menu-btn:hover {
+    background-color: rgb(210, 102, 56);
 }
 
-.suggestion-images {
-    padding-top: 40px;
- 
-}
-
-.suggestion-images img{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: block;
+.home-part2{
+    display: flex;
+  gap: 20px;
+  justify-content: space-around;
     
-    margin-bottom: 30px;
 }
+
+
+
+.home-part2 div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+  
+   
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px; /* Set a fixed width */
+    /* Or you can use percentage for responsiveness */
+    /* width: 25%;  */
+  }
+
+  .home-part2 div p {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+.Links-home{
+    color: black;
+    text-decoration: none;
+}
+  .icon {
+    color:rgb(254, 71, 4) ; /* Sets the icon color to orange */
+    font-size: 17px; /* Maintains the same size (adjust if needed) */
+  }
+  /* Ensure the parent container is using flex */
+.dish-list {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping of items to new lines */
+    gap: 20px;
+    justify-content: flex-start;  /* Align items to the left, or center depending on your preference */
+    margin: 0 auto;
+    padding: 20px;
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+  }
+  
+  /* Style for each dish item */
+  .dish-item {
+    margin-top: 50px; /* Reduced margin-top to make the boxes closer to each other */
+    margin-left: 30px; /* Reduced margin-left for better alignment */
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px; /* Decreased width to make the boxes smaller */
+    border: 1px solid #ccc;
+    padding: 15px; /* Slightly reduced padding for a compact look */
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .dish-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Style for the image */
+  .dish-img {
+    width: 60%; /* Reduced the size of the image */
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  /* Style for dish name */
+  .dish-name {
+    font-size: 1.125rem; /* Smaller font size */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Style for dish description */
+  .dish-description {
+    font-size: 0.875rem; /* Smaller font size for description */
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  /* Style for dish price */
+  .dish-price {
+    font-size: 1rem; /* Reduced price font size */
+    font-weight: bold;
+    color: rgb(254, 71, 4);
+  }
+  
+  .add-to-cart-btn {
+    background-color: rgb(254, 71, 4);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+  }
+  
+  .add-to-cart-btn:hover {
+    background-color: darkorange;
+  }
+  .popular-dishes-title {
+    margin-left: 30px;
+    font-size: 2rem;
+    color:rgb(254, 71, 4) ;
+    margin-bottom: 20px;
+    font-weight: bold;
+    margin-top: 40px;
+  }

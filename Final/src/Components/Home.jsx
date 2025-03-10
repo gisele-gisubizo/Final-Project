@@ -118,7 +118,7 @@ function Home() {
         </div>
       
              <div className='home-image'><img src={eat1}  /></div>
-       <div className='home-button'><button type='submit' className='view-menu-btn'>View Menu</button></div>
+       <div className='home-button'><button type='submit' className='view-menu-btn'> <Link to='/Menu' className='Links-home-menu'>View Menu</Link></button></div>
       </div>
         <div className='home-part2'>
           <div className='main'>
@@ -133,7 +133,7 @@ function Home() {
 
           <div className='beverages'>
             <FaWineGlass className='icon'/>
-           <Link  to='/Beverages' className='Links-home'> <p>Beverages</p></Link>
+           <Link  to='/Beverage' className='Links-home'> <p>Beverages</p></Link>
           </div>
 
           <div className='beverages'>

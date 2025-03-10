@@ -7,7 +7,7 @@
 .login-content{
     position: relative; /* Needed for overlay positioning */
   height: 100vh; /* Makes it cover full height of the viewport */
-  background-image: url("../assets/padlock.webp"); /* Path to your image */
+  background-image: url("../assets/Login.webp"); /* Path to your image */
   background-size: cover; /* Makes the background image cover the whole element */
   background-position: center; /* Center the image */
 }
@@ -18,18 +18,18 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(5, 62, 34, 0.5); /* Dark overlay */
+  background-color: rgba(255, 165, 0, 0.2);; /* Dark overlay */
   z-index: 1;
 }
 
-.login-form{
-    background-color: white;
-    margin-top: 6em;
-    margin-left: 20em;
-    width: 40em;
-     height: 26em;
-     border-radius: 20px;
-    box-shadow: 0 10px 17px 9px rgba(19, 62, 19, 0.5); 
+.login-form {
+  background-color: rgba(255, 255, 255, 0.7); /* 70% opaque white for a see-through effect */
+  margin-top: 6em;
+  margin-left: 20em;
+  width: 40em;
+  height: 26em;
+  border-radius: 20px;
+  box-shadow: 0 10px 17px 9px rgba(255, 165, 0, 0.2);
 }
 
 .login-form h2{
@@ -37,13 +37,13 @@ padding-top:10px;
    margin-left: 8em;
    font-size: 29px;
    margin-bottom: 20px;
-   color: rgb(10, 67, 10);
+   color:  #FFA500;
 }
 
 .login-form h4{
     margin-left: 13.3em;
     font-size: 20px;
-    color: rgb(10, 67, 10);
+    color: #FFA500;
  }
 
  .login-input{
@@ -58,7 +58,7 @@ margin-left: 10em;
   height: 50px;
 
   outline: none;
-  border: 1px solid #bce7a1;
+  border: 1px solid #FFDAB9;
 
  
 
@@ -76,7 +76,7 @@ margin-left: 10em;
     }
   
     .input-different button{
-      background-color: rgb(10, 67, 10);
+      background-color:  #FFA500;
       width: 15em;
   height: 30px;
   margin-top: 40px;
@@ -87,12 +87,12 @@ margin-left: 12em;
   
     .input-different button:hover{
       color: white;
-      background-color: rgb(17, 96, 17);
+      background-color:  #FFA500;
     }
 
 
   .input-different input{
-    background-color: rgb(10, 67, 10);
+    background-color: #FFA500;
     color: white;
   }
 

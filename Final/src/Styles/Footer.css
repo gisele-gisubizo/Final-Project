@@ -8,8 +8,9 @@
 .footer-content{
     display: flex;
     gap: 10em;
-    margin-top: 40px;
-  background-color: rgb(10, 67, 10);
+    height: 240px;
+    margin-top: 16.3em;
+  background-color: rgb(13, 21, 52);
   color: white;
 }
 
@@ -33,6 +34,10 @@
 }
 .company h4{
  font-size: 20px;
+}
+
+.company p{
+    padding-top: 15px;  
 }
 
 .company ul li{

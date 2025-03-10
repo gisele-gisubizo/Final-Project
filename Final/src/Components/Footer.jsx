@@ -8,42 +8,34 @@ function Footer() {
   return (
     <div className='footer-content'>
  <div className="company">
-<h4>Company</h4>
+<h4>FoodHub</h4>
+<p>Delicious Food Delivered at your Doorstep</p>
+
+ </div>
+
+ <div className="company">
+<h4>Quick Links</h4>
 <ul>
-    <li>Home</li>
-    <li>Message</li>
-    <li>Notification</li>
-    <li>Explore</li>
+    <li>Menu</li>
+    <li>My Orders</li>
+    <li>Cart</li>
 </ul>
 
  </div>
 
  <div className="company">
-<h4>Resources</h4>
+<h4>Contact</h4>
 <ul>
-    <li>Privacy Policy</li>
-    <li>Terms and Conditions</li>
-    <li>Blog</li>
-    <li>Contact Us</li>
-</ul>
-
- </div>
-
- <div className="company">
-<h4>Partners</h4>
-<ul>
-    <li>RIB</li>
-    <li>National Policy</li>
-    <li>NSA</li>
-    <li>GardaWorld</li>
+    <li>+1 234 567 890</li>
+    <li>info@foodHub.com</li>
+    <li>123 Food Street,Ny</li>
 </ul>
 
  </div>
 
  <div className='footer-tittle'>
- <h3>Fraud Alert</h3>
+ <h3>Follow Us</h3>
  <br />
- <p>Stay Alert, Stay Safe – Expose Scams, Protect Society</p>
  <FaFacebook className="social-icon"/>
 <FaXTwitter   className="social-icon"/>
 <FaInstagram   className="social-icon"/>
@@ -52,7 +44,7 @@ function Footer() {
  </div>
 
  <div className='copyrights'>
-  <p>Copyright @2025</p>
+  <p>2025 FoodHub,All Rights reserved</p>
 
  
 

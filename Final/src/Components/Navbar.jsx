@@ -1,20 +1,20 @@
 import React from 'react'
 import '../Styles/Navbar.css'
+import { Link } from 'react-router-dom'
 function Navbar() {
   return (
     <div className='nav-content'>
-<div className='nav-input'> 
-<input type="text" placeholder='search..' />
-</div>
+
+<h2>FoodHub</h2>
+
 
 
 <div className='nav-list'>
 <ul>
-    <li>Home</li>
-    <li>Messages</li>
-    <li>Notification</li>
-    <li>Explore</li>
-    <li>Profile</li>
+   <Link className='Links'><li>Home</li></Link> 
+  <Link className='Links'><li>Cart</li></Link>  
+  <Link className='Links'><li>My Orders</li></Link>  
+
 </ul>
 
 </div>

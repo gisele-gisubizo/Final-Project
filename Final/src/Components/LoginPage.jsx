@@ -1,5 +1,5 @@
 import React from 'react'
-import padlock from '../assets/padlock.webp'
+import Login from '../assets/Login.webp'
 import { Link } from 'react-router-dom'
 import '../Styles/LoginPage.css'
 function LoginPage() {

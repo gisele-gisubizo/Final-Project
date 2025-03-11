@@ -1,16 +1,16 @@
-import React from 'react';
-import '../Styles/Smoothie.css'
+import React, { useState } from 'react';
+import '../Styles/Smoothie.css';
 
-import smo1 from '../assets/smo1.webp'
-import smo2 from '../assets/smo2.webp'
-import smo3 from '../assets/smo3.webp'
-import smo4 from '../assets/smo4.webp'
-import smo5 from '../assets/smo5.webp'
-import smo6 from '../assets/smo6.webp'
-import smo7 from '../assets/smo7.webp'
-import smo8 from '../assets/smo8.webp'
-import smo12 from '../assets/smo12.jpeg'
-import smo13 from '../assets/smo13.webp'
+import smo1 from '../assets/smo1.webp';
+import smo2 from '../assets/smo2.webp';
+import smo3 from '../assets/smo3.webp';
+import smo4 from '../assets/smo4.webp';
+import smo5 from '../assets/smo5.webp';
+import smo6 from '../assets/smo6.webp';
+import smo7 from '../assets/smo7.webp';
+import smo8 from '../assets/smo8.webp';
+import smo12 from '../assets/smo12.jpeg';
+import smo13 from '../assets/smo13.webp';
 
 const smoothieList = [
   { id: 1, name: 'Mango Smoothie', description: 'A refreshing blend of ripe mangoes and yogurt.', price: 4.99, img: smo1 },
@@ -26,10 +26,18 @@ const smoothieList = [
 ];
 
 function Smoothie() {
-//   const handleAddToCart = (smoothie) => {
-//     console.log(`${smoothie.name} added to cart.`);
-//     // Add logic to update cart state or handle cart logic here
-//   };
+  const [cart, setCart] = useState([]);
+
+  const handleAddToCart = (smoothie) => {
+    setCart((prevCart) => [...prevCart, smoothie]);
+    setTimeout(() => {
+      document.getElementById('cart-section').scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  };
+
+  const handleRemoveFromCart = (index) => {
+    setCart((prevCart) => prevCart.filter((_, i) => i !== index));
+  };
 
   return (
     <div className="smoothie-menu">
@@ -44,6 +52,28 @@ function Smoothie() {
             <button className="add-to-cart-btn" onClick={() => handleAddToCart(smoothie)}>Add to Cart</button>
           </div>
         ))}
+      </div>
+
+      {/* Cart Section */}
+      <div id="cart-section" className="cart-section">
+        <h2>Your Cart</h2>
+        {cart.length === 0 ? (
+          <p>Your cart is empty</p>
+        ) : (
+          <div>
+            {cart.map((item, index) => (
+              <div key={index} className="cart-item">
+                <img src={item.img} alt={item.name} className="cart-item-img" />
+                <div>
+                  <h3>{item.name}</h3>
+                  <p>${item.price.toFixed(2)}</p>
+                </div>
+                <button className="remove-btn" onClick={() => handleRemoveFromCart(index)}>Remove</button>
+              </div>
+            ))}
+            <p>Total: ${cart.reduce((total, item) => total + item.price, 0).toFixed(2)}</p>
+          </div>
+        )}
       </div>
     </div>
   );

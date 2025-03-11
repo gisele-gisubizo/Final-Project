@@ -9,8 +9,8 @@ function Footer() {
   return (
     <div className='footer-content'>
  <div className="company">
-<h4>FoodHub</h4>
-<p>Delicious Food Delivered at your Doorstep</p>
+<h4>DineMate</h4>
+<p>Dine Effortlessly, Order Instantly</p>
 
  </div>
 

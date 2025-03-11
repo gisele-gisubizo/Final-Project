@@ -183,3 +183,95 @@ html, body {
     font-weight: bold;
     margin-top: 40px;
   }
+  /* Style for the cart section */
+.cart-section {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+}
+
+.cart-item {
+  display: flex; /* Align items horizontally */
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.cart-item-img {
+  width: 60px; /* Set a small size for the image */
+  height: 60px; /* Ensure the image stays square */
+  margin-right: 15px; /* Space between image and text */
+  object-fit: cover; /* Maintain the aspect ratio and prevent stretching */
+}
+
+.cart-item div {
+  flex-grow: 1;
+}
+
+.cart-item h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.cart-item p {
+  margin: 0;
+  color: #555;
+}
+
+/* Style for cart total */
+.cart-section p {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.remove-from-cart-btn {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.remove-from-cart-btn:hover {
+  background-color: #cc0000;
+}
+
+/* Default light mode */
+body {
+  background-color: #ffffff;
+  color: #333;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #fff;
+}
+
+.dark-mode .home-container,
+.dark-mode .popular-dishes-container,
+.dark-mode .cart-section {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+.dark-mode-toggle {
+  position: fixed;
+  top: 17px;
+  right: 10px;
+}
+
+.dark-mode-toggle button {
+  padding: 8px 16px;
+  cursor: pointer;
+  background-color: #ff9800;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+}
+

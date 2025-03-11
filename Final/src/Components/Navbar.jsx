@@ -5,15 +5,15 @@ function Navbar() {
   return (
     <div className='nav-content'>
 
-<h2>FoodHub</h2>
+<h2>DineMate</h2>
 
 
 
 <div className='nav-list'>
 <ul>
    <Link to='/Home' className='Links'><li>Home</li></Link> 
-  <Link className='Links'><li>Cart</li></Link>  
-  <Link className='Links'><li>My Orders</li></Link>  
+  <Link className='Links'><li> My Orders</li></Link> 
+  <Link className='Links'><li>Kitchen</li></Link>  
 
 </ul>
 

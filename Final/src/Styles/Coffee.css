@@ -59,3 +59,30 @@
 .add-to-cart-btn:hover {
   background-color: rgb(254, 71, 4); /* Darker orange on hover */
 }
+
+.cart {
+  margin-top: 20px;
+  padding: 10px;
+  border-top: 2px solid #ddd;
+}
+
+.cart ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cart li {
+  margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 8px;
+  cursor: pointer;
+  border-radius: 5px;
+}

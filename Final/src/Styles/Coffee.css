@@ -40,11 +40,11 @@
 }
 
 .price {
-  color: rgb(254, 71, 4); /* Makes the price phrase orange */
+  color: #CC5500; /* Makes the price phrase orange */
 }
 
 .add-to-cart-btn {
-  background-color: rgb(254, 71, 4); /* Orange color for the "Add to Cart" button */
+  background-color: #CC5500; /* Orange color for the "Add to Cart" button */
   color: white;
   border: none;
   padding: 10px 20px;
@@ -57,7 +57,7 @@
 }
 
 .add-to-cart-btn:hover {
-  background-color: rgb(254, 71, 4); /* Darker orange on hover */
+  background-color: #CC5500; /* Darker orange on hover */
 }
 
 .cart {
@@ -79,7 +79,7 @@
 }
 
 .cart button {
-  background-color: red;
+  background-color: #CC5500;
   color: white;
   border: none;
   padding: 5px 8px;

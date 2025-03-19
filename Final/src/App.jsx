@@ -20,11 +20,11 @@ function App() {
 
 <Route path='/' element={<Layout/>}>
 <Route path='/Home'  index element={<Home/>}/>
-<Route path='/appetizer'  index element={<Appetizer/>}/>
-<Route path='/beverage'  index element={<Beverage/>}/>
-<Route path='/menu'  index element={<Menu/>}/>
-<Route path='/coffee'  index element={<Coffee/>}/>
-<Route path='/smoothie'  index element={<Smoothie/>}/>
+<Route path='/appetizer'  element={<Appetizer/>}/>
+<Route path='/beverage'   element={<Beverage/>}/>
+<Route path='/menu'   element={<Menu/>}/>
+<Route path='/coffee'  element={<Coffee/>}/>
+<Route path='/smoothie'  element={<Smoothie/>}/>
 
 
 

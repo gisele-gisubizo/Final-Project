@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 .appetizer-part1{
- background-color:  rgb(254, 71, 4);
+ background-color:  #CC5500;
  color: white;
  font-family: 'Roboto', sans-serif;
  text-align: center;
@@ -55,7 +55,7 @@
 .appetizer-price {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #e74c3c;
+    color: #CC5500;
     margin-bottom: 10px; /* Added margin-bottom for spacing */
 }
 
@@ -79,8 +79,9 @@
     margin-bottom: 10px;
 }
 
+
 .add-to-cart-btn {
-    background-color: rgb(254, 71, 4);
+    background-color: #CC5500;
     color: white;
     border: none;
     padding: 8px 12px;
@@ -119,7 +120,7 @@
   }
   
   .cart-container button.remove-from-cart-btn {
-    background-color: #f44336;
+    background-color: #CC5500;
     color: white;
     border: none;
     padding: 5px 10px;

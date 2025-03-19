@@ -1,83 +1,130 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.Register-content{
-    position: relative; /* Needed for overlay positioning */
-  height: 150vh; /* Makes it cover full height of the viewport */
-  background-image: url("../assets/register.webp"); /* Path to your image */
-  background-size: cover; /* Makes the background image cover the whole element */
-  background-position: center; /* Center the image */
+/* Background Container */
+.register-container {
+  position: relative;
+  height: 100vh;
+  background-image: url("../assets/register.webp");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.overlay{
-      position: absolute;
+/* Beautiful Overlay with Smooth Blur */
+.overlay {
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 165, 0, 0.2); /* Dark overlay */
-  z-index: 1;
+  background: rgba(0, 0, 0, 0.6); /* Darkened overlay */
+  backdrop-filter: blur(10px); /* Soft blur effect */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.login-form {
-  background-color: rgba(255, 255, 255, 0.7); /* 70% opaque white for a see-through effect */
-  margin-top: 6em;
-  margin-left: 20em;
-  width: 40em;
-  height: 26em;
-  border-radius: 20px;
-  box-shadow: 0 10px 17px 9px rgba(255, 165, 0, 0.2);
-}
-
-.register-form h2{
-padding-top:10px;
-   margin-left: 8em;
-   font-size: 29px;
-   margin-bottom: 20px;
-   color:  #FFA500;
-}
-
-.register-form h4{
-    margin-left: 13.3em;
-    font-size: 20px;
-    color:  #FFA500;
- }
-
- .login-input{
-    display: flex;
-    flex-direction: column;
-margin-top: 40px;
-gap: 30px;
-margin-left: 10em;
- }
-  .login-input button{
-  width: 25em;
-  height: 50px;
-  border-radius: 20px;
-  outline: none;
-  color: white;
-  border: 1px solid #FFDAB9;
+/* Enlarged Register Box */
+.register-box {
+  background: rgba(255, 255, 255, 0.9); /* Slight transparency */
+  width: 45em;
+  padding: 3em;
+  border-radius: 15px;
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
   text-align: center;
-  background-color: #FFDAB9;
+  transition: 0.3s ease-in-out;
+}
 
-  }
+/* Smooth Hover Effect */
+.register-box:hover {
+  transform: scale(1.02);
+}
 
-  .input-different button{
-    background-color: #FFA500;
-    color: white;
-  }
+/* Title Styling */
+.register-box h2 {
+  font-size: 34px;
+  margin-bottom: 10px;
+  color: #CC5500;
+  font-weight: bold;
+  text-transform: uppercase;
+}
 
+/* Subtitle */
+.register-box h4 {
+  font-size: 22px;
+  color: #CC5500;
+  margin-bottom: 25px;
+}
 
- 
-  .register-form p{
- margin-left: 9.9em;
- margin-top: 10px;
+/* Input Fields */
+.register-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+}
 
-  }
+.register-inputs input {
+  width: 85%;
+  height: 48px;
+  outline: none;
+  border: 2px solid #FFDAB9;
+  border-radius: 10px;
+  padding-left: 15px;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease-in-out;
+}
 
-  .register-link{
-    text-decoration: none;
-  }
+/* Input Focus Effect */
+.register-inputs input:focus {
+  border-color: #CC5500;
+  box-shadow: 0px 0px 12px rgba(255, 107, 107, 0.5);
+  background: white;
+}
+
+/* Enhanced Button */
+.register-button-container button {
+  width: 85%;
+  height: 50px;
+  border-radius: 25px;
+  background: linear-gradient(to right, #CC5500, #ffcc00);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  border: none;
+  margin-top: 15px;
+  box-shadow: 0px 5px 15px rgba(60, 60, 60, 0.4);
+}
+
+/* Button Hover Effect */
+.register-button-container button:hover {
+  background: linear-gradient(to right, #ffcc00, #ff6b6b);
+  transform: scale(1.05);
+}
+
+/* Text Below Form */
+.register-box p {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.register-link {
+  text-decoration: none;
+  color: #CC5500;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+  color: #ffcc00;
+}

@@ -1,4 +1,5 @@
-import React, { useState, useRef } from 'react';
+import { useState,useEffect } from 'react';
+import React, {  useRef } from 'react';
 import '../Styles/Appetizer.css';
 import app1 from '../assets/app1.jpeg';
 import app11 from '../assets/app11.webp';

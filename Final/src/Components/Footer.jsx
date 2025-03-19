@@ -18,8 +18,8 @@ function Footer() {
 <h4>Quick Links</h4>
 <ul>
     <li>Menu</li>
+    <li>Kitchen</li>
     <li>My Orders</li>
-    <li>Cart</li>
 </ul>
 
  </div>
@@ -50,7 +50,7 @@ function Footer() {
  </div>
 
  <div className='copyrights'>
-  <p>2025 FoodHub,All Rights reserved</p>
+  <p>2025 DineMate,All Rights reserved</p>
 
  
 

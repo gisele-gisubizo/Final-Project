@@ -35,7 +35,7 @@ html, body {
     margin-top: -210px;
 }
 .view-menu-btn {
-    background-color: rgb(254, 71, 4);
+    background-color:#CC5500;
     color: white;
     border: none;
     padding: 12px 24px;
@@ -44,6 +44,7 @@ html, body {
     font-size: 16px;
     font-weight: bold;
     transition: background-color 0.3s ease;
+    margin-left: -90px;
   
    
 }
@@ -52,9 +53,6 @@ html, body {
     margin-top: -15em;
 }
 
-.view-menu-btn:hover {
-    background-color: rgb(210, 102, 56);
-}
 
 .home-part2{
     display: flex;
@@ -91,9 +89,10 @@ html, body {
 .Links-home-menu{
   color: white;
     text-decoration: none;
+    
 }
   .icon {
-    color:rgb(254, 71, 4) ; /* Sets the icon color to orange */
+    color: #CC5500 ; /* Sets the icon color to orange */
     font-size: 17px; /* Maintains the same size (adjust if needed) */
   }
   /* Ensure the parent container is using flex */
@@ -156,11 +155,11 @@ html, body {
   .dish-price {
     font-size: 1rem; /* Reduced price font size */
     font-weight: bold;
-    color: rgb(254, 71, 4);
+    color: #CC5500;
   }
   
   .add-to-cart-btn {
-    background-color: rgb(254, 71, 4);
+    background-color:  #CC5500!important;
     color: white;
     font-size: 1rem;
     font-weight: bold;
@@ -171,14 +170,11 @@ html, body {
     transition: background-color 0.3s ease;
     margin-top: 10px;
   }
-  
-  .add-to-cart-btn:hover {
-    background-color: darkorange;
-  }
+ 
   .popular-dishes-title {
     margin-left: 60px;
     font-size: 2rem;
-    color:rgb(254, 71, 4) ;
+    color:#CC5500;
     margin-bottom: 20px;
     font-weight: bold;
     margin-top: 40px;
@@ -226,7 +222,7 @@ html, body {
 }
 
 .remove-from-cart-btn {
-  background-color: #ff4d4d;
+  background-color: #CC5500;
   color: white;
   border: none;
   padding: 6px 12px;
@@ -237,7 +233,7 @@ html, body {
 }
 
 .remove-from-cart-btn:hover {
-  background-color: #cc0000;
+  background-color: #6f0606;
 }
 
 /* Default light mode */
@@ -268,7 +264,7 @@ body.dark-mode {
 .dark-mode-toggle button {
   padding: 8px 16px;
   cursor: pointer;
-  background-color: #ff9800;
+  background-color: #CC5500;
   border: none;
   border-radius: 5px;
   font-weight: bold;

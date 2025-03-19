@@ -15,7 +15,7 @@
 }
 .nav-content h2{
     margin-left: 50px;
-    color: rgb(254, 71, 4);
+    color: #CC5500;
 }
 
 
@@ -44,3 +44,10 @@
     text-decoration: none;
 }
 
+
+.restaurant-icon {
+    font-size: 28px; /* Adjust icon size */
+    color:#CC5500 ; /* Orange color (matches food theme) */
+    margin-right: 8px; /* Space between icon and text */
+    vertical-align: middle; /* Aligns properly with text */
+}

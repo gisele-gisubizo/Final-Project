@@ -1,58 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-.beverages-part1{
-    background: url("../assets/back.jpeg"); 
-    font-family: 'Roboto', sans-serif;
-}
-
-.beverage-container {
-    width: 100%;
-    overflow: hidden;
-  }
-  
-  .beverages-part1 {
-    position: relative;
-    background-image: url('../assets/back.jpeg'); /* Path to your background image */
-    background-size: cover; /* Ensure the image covers the area */
-    background-position: center;
-    height: 250px; /* Adjust the height to your liking */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .overlay-beverage {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay with some transparency */
-    display: flex;
-    flex-direction: column; /* Stack content vertically */
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .overlay-beverage h3 {
-    font-size: 2rem;
-    margin: 0;
-    margin-bottom: 10px; /* Adds some space between h3 and p */
-  }
-  
-  .overlay-beverage p {
-    font-size: 0.8rem;
-    color: rgb(223, 219, 219);
-    margin: 0; /* Removes default margin */
-    margin-top: 5px; /* Adds a little spacing between p and h3 */
-  }
   
   * {
     margin: 0;
@@ -120,7 +66,7 @@
   }
   
   .beverage-button {
-    background-color: #f1e4e2; /* Light color */
+    background-color: #CC5500; /* Light color */
    
     border: none;
     padding: 8px 16px; /* Adjusted padding for smaller button size */
@@ -133,7 +79,7 @@
   }
   
   .beverage-button:hover {
-    background-color: rgb(254, 71, 4); /* Darker color on hover */
+    background-color: #CC5500; /* Darker color on hover */
     color: white !important; /* Ensure the text color changes to white */
   }
   
@@ -177,11 +123,11 @@
   }
   
   .price {
-    color: #e74c3c; /* Makes the price phrase orange */
+    color: #CC5500; /* Makes the price phrase orange */
   }
   
   .pick-button {
-    background-color: #e74c3c; /* Orange color for the Pick button */
+    background-color: #CC5500; /* Orange color for the Pick button */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -239,7 +185,7 @@
   }
   
   .remove-btn {
-    background-color: #ff4d4d;
+    background-color: #CC5500;
     color: white;
     border: none;
     padding: 6px 12px;
@@ -254,7 +200,7 @@
   }
   
   .pick-button {
-    background-color:rgb(254, 71, 4) ;
+    background-color:#CC5500 ;
     color: white;
     border: none;
     padding: 8px 14px;

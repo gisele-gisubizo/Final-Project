@@ -1,15 +1,12 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* LoginPage.css */
 .login-content {
-  position: relative; /* Needed for overlay positioning */
-  height: 100vh; /* Makes it cover full height of the viewport */
-  background-image: url("../assets/smo1.webp"); /* Path to your image */
-  background-size: cover; /* Makes the background image cover the whole element */
-  background-position: center; /* Center the image */
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: url('../assets/Login.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .overlay {
@@ -18,111 +15,123 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
-  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .login-form {
-  background-color: rgba(255, 255, 255, 0.7); /* 70% opaque white for a see-through effect */
-  margin-top: 6em;
-  margin-left: 20em;
-  width: 40em;
-  height: 26em;
-  border-radius: 20px;
-  box-shadow: 0 10px 17px 9px rgba(255, 165, 0, 0.2);
-  padding: 2em;
+  background-color: rgba(255, 255, 255, 0.85);
+  width: 90%;
+  max-width: 400px;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(255, 165, 0, 0.3);
+  text-align: center;
 }
 
 .login-form h2 {
-  text-align: center;
-  font-size: 29px;
-  margin-bottom: 20px;
   color: #FFA500;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .login-form h4 {
-  text-align: center;
-  font-size: 20px;
-  color: #FFA500;
+  color: #CC5500;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
 }
 
 .login-input {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
 .login-input input {
-  width: 90%; /* Instead of fixed width */
-  height: 50px;
-  outline: none;
-  border: 1px solid #FFDAB9;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid #FFDAB9;
   border-radius: 8px;
-  padding-left: 15px; /* Left margin inside input */
-  font-size: 16px;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+  outline: none;
 }
 
-/* Beautiful Button */
-.login-input button {
-  width: 90%;
-  height: 50px;
-  border-radius: 25px;
-  outline: none;
-  background: linear-gradient(to right, #CC5500, #ffa500); /* Gradient effect */
+.login-input input:focus {
+  border-color: #FFA500;
+  box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.2);
+}
+
+.input-different button {
+  width: 100%;
+  padding: 0.8rem;
+  background: linear-gradient(to right, #CC5500, #ffa500);
   color: white;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
   border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
   box-shadow: 0 4px 10px rgba(255, 165, 0, 0.4);
 }
 
-/* Button Hover Effect */
-.login-input button:hover {
-  background: linear-gradient(to right, #ffa500, #CC5500);
-  transform: scale(1.05);
-}
-
-/* Small Button */
-.input-different button {
-  background-color: #FFA500;
-  width: 15em;
-  height: 30px;
-  margin-top: 40px;
-  outline: none;
-  margin-left: 12em;
-  color: white;
-  border: none;
-  border-radius: 15px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-/* Small Button Hover Effect */
 .input-different button:hover {
-  background-color: #ff7e5f;
-  transform: scale(1.1);
+  background: linear-gradient(to right, #ffa500, #CC5500);
+  transform: scale(1.02);
 }
 
-.input-different input {
-  background-color: #CC5500;
-  color: white;
+.input-different button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .login-form p {
-  text-align: center;
-  margin-top: 10px;
+  margin: 0.8rem 0;
+  color: #555;
 }
 
 .loginin-link {
-  text-decoration: none;
   color: #CC5500;
-  font-weight: bold;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
 }
 
 .loginin-link:hover {
+  color: #FFA500;
   text-decoration: underline;
+}
+
+.error-message {
+  color: #ff3333;
+  background-color: rgba(255, 200, 200, 0.3);
+  padding: 0.8rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  border-left: 4px solid #ff3333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .login-form {
+    padding: 1.5rem;
+    width: 95%;
+  }
+  
+  .login-form h2 {
+    font-size: 1.8rem;
+  }
+  
+  .login-input input {
+    padding: 0.7rem;
+  }
 }

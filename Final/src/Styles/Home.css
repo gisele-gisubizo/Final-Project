@@ -1,185 +1,179 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
 
 html, body {
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    width: 100%;
-}
-.home-container{
-    background-color: #FFF4E6;
-    height: 40em;
-    font-family: 'Roboto', sans-serif;
-}
-.home-part1 h3{
-   padding-top: 190px;
-   margin-left: 70px;
-   font-size: 35px;
-   font-weight: bold;
-}
-.home-part1 p{
-    margin-left: 70px;
-    font-weight: lighter;
-    font-size: 14px;
-    color: rgb(66, 64, 64);
+  overflow-x: hidden;
+  width: 100%;
 }
 
-.home-image img{
-    width: 470px;
-    height: 470px;
-    border-radius: 10px;
-    margin-left: 44em;
-    margin-top: -210px;
+.home-container {
+  background-color: #FFF4E6;
+  height: 40em;
+  font-family: 'Roboto', sans-serif;
 }
+
+.home-part1 h3 {
+  padding-top: 190px;
+  margin-left: 70px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.home-part1 p {
+  margin-left: 70px;
+  font-weight: lighter;
+  font-size: 14px;
+  color: rgb(66, 64, 64);
+}
+
+.home-image img {
+  width: 470px;
+  height: 470px;
+  border-radius: 10px;
+  margin-left: 44em;
+  margin-top: -210px;
+  object-fit: cover;
+}
+
 .view-menu-btn {
-    background-color:#CC5500;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    margin-left: -90px;
-  
-   
-}
-.home-button{
-    margin-left: 10em;
-    margin-top: -15em;
+  background-color: #CC5500;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-left: -90px;
 }
 
+.home-button {
+  margin-left: 10em;
+  margin-top: -15em;
+}
 
-.home-part2{
-    display: flex;
+.home-part2 {
+  display: flex;
   gap: 20px;
   justify-content: space-around;
-    
 }
-
-
 
 .home-part2 div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    background-color: white;
-  
-   
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    width: 250px; /* Set a fixed width */
-    /* Or you can use percentage for responsiveness */
-    /* width: 25%;  */
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f4f4f4; /* Soft gray to match item cards */
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  transition: background-color 0.3s ease;
+}
 
-  .home-part2 div p {
-    margin-top: 10px;
-    font-size: 16px;
-  }
-.Links-home{
-    color: black;
-    text-decoration: none;
+.home-part2 div p {
+  margin-top: 10px;
+  font-size: 16px;
 }
-.Links-home-menu{
+
+.Links-home {
+  color: black;
+  text-decoration: none;
+}
+
+.Links-home-menu {
   color: white;
-    text-decoration: none;
-    
+  text-decoration: none;
 }
-  .icon {
-    color: #CC5500 ; /* Sets the icon color to orange */
-    font-size: 17px; /* Maintains the same size (adjust if needed) */
-  }
-  /* Ensure the parent container is using flex */
+
+.icon {
+  color: #CC5500;
+  font-size: 17px;
+}
+
 .dish-list {
-    display: flex;
-    flex-wrap: nowrap; /* Prevent wrapping of items to new lines */
-    gap: 20px;
-    justify-content: flex-start;  /* Align items to the left, or center depending on your preference */
-    margin: 0 auto;
-    padding: 20px;
-    overflow-x: auto; /* Allow horizontal scrolling if needed */
-  }
-  
-  /* Style for each dish item */
-  .dish-item {
-    margin-top: 50px; /* Reduced margin-top to make the boxes closer to each other */
-    margin-left: 60px; /* Reduced margin-left for better alignment */
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    width: 250px; /* Decreased width to make the boxes smaller */
-    border: 1px solid #ccc;
-    padding: 15px; /* Slightly reduced padding for a compact look */
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .dish-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Style for the image */
-  .dish-img {
-    width: 60%; /* Reduced the size of the image */
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 15px;
-  }
-  
-  /* Style for dish name */
-  .dish-name {
-    font-size: 1.125rem; /* Smaller font size */
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  /* Style for dish description */
-  .dish-description {
-    font-size: 0.875rem; /* Smaller font size for description */
-    color: #666;
-    margin-bottom: 10px;
-  }
-  
-  /* Style for dish price */
-  .dish-price {
-    font-size: 1rem; /* Reduced price font size */
-    font-weight: bold;
-    color: #CC5500;
-  }
-  
-  .add-to-cart-btn {
-    background-color:  #CC5500!important;
-    color: white;
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 10px;
-  }
- 
-  .popular-dishes-title {
-    margin-left: 60px;
-    font-size: 2rem;
-    color:#CC5500;
-    margin-bottom: 20px;
-    font-weight: bold;
-    margin-top: 40px;
-  }
-  /* Style for the cart section */
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  justify-content: flex-start;
+  margin: 0 auto;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.dish-item {
+  margin-top: 50px;
+  margin-left: 60px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f4f4f4; /* Soft gray for item cards */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dish-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.dish-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+.dish-name {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.dish-description {
+  font-size: 0.875rem;
+  color: #777; /* Softer gray for description text */
+  margin-bottom: 10px;
+}
+
+.dish-price {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #CC5500;
+}
+
+.add-to-cart-btn {
+  background-color: #CC5500 !important;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.popular-dishes-title {
+  margin-left: 60px;
+  font-size: 2rem;
+  color: #CC5500;
+  margin-bottom: 20px;
+  font-weight: bold;
+  margin-top: 40px;
+}
+
 .cart-section {
   margin-top: 50px;
   padding: 20px;
@@ -188,16 +182,16 @@ html, body {
 }
 
 .cart-item {
-  display: flex; /* Align items horizontally */
+  display: flex;
   align-items: center;
   margin-bottom: 15px;
 }
 
 .cart-item-img {
-  width: 60px; /* Set a small size for the image */
-  height: 60px; /* Ensure the image stays square */
-  margin-right: 15px; /* Space between image and text */
-  object-fit: cover; /* Maintain the aspect ratio and prevent stretching */
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+  object-fit: cover;
 }
 
 .cart-item div {
@@ -214,7 +208,6 @@ html, body {
   color: #555;
 }
 
-/* Style for cart total */
 .cart-section p {
   font-size: 18px;
   font-weight: bold;
@@ -236,13 +229,31 @@ html, body {
   background-color: #6f0606;
 }
 
-/* Default light mode */
+.view-in-my-orders-btn {
+  background-color: #CC5500;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.view-in-my-orders-btn:hover {
+  background-color: #b34700;
+}
+
 body {
   background-color: #ffffff;
   color: #333;
 }
 
-/* Dark mode styles */
 body.dark-mode {
   background-color: #121212;
   color: #fff;
@@ -271,3 +282,20 @@ body.dark-mode {
   color: white;
 }
 
+/* Dark Mode Styles */
+body.dark-mode .home-part2 div {
+  background-color: #2a2a2a; /* Darker gray for dark mode cards */
+}
+
+body.dark-mode .dish-item {
+  background-color: #2a2a2a; /* Darker gray for dark mode item cards */
+}
+
+body.dark-mode .dish-name,
+body.dark-mode .dish-description {
+  color: #ccc; /* Lighter gray for text */
+}
+
+body.dark-mode .dish-price {
+  color: #ff7b00; /* Lighter orange in dark mode */
+}

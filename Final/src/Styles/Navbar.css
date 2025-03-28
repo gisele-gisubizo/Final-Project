@@ -1,53 +1,66 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-.nav-content{
- 
-
- background-color: rgb(255, 255, 255);
- height: 40px;
-
- 
-
-}
-.nav-content h2{
+  }
+  
+  .nav-content {
+    background-color: rgb(255, 255, 255);
+    height: 40px;
+  }
+  
+  .nav-content h2 {
     margin-left: 50px;
     color: #CC5500;
-}
-
-
-.nav-list ul{
-    list-style: none;  
+  }
+  
+  .nav-list ul {
+    list-style: none;
     display: flex;
     gap: 30px;
     margin-left: 55em;
     margin-top: -50px;
-}
-
-.nav-list ul li{
+  }
+  
+  .nav-list ul li {
     padding: 20px;
     font-size: 14px;
     color: rgb(0, 0, 0);
+  }
   
-}
-
-.nav-list ul li:hover{
-   
+  .nav-list ul li:hover {
     color: rgb(254, 71, 4);
+  }
   
-}
-
-.Links{
+  .Links {
     text-decoration: none;
-}
-
-
-.restaurant-icon {
-    font-size: 28px; /* Adjust icon size */
-    color:#CC5500 ; /* Orange color (matches food theme) */
-    margin-right: 8px; /* Space between icon and text */
-    vertical-align: middle; /* Aligns properly with text */
-}
+  }
+  
+  .restaurant-icon {
+    font-size: 28px;
+    color: #CC5500;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  
+  /* Dark Mode Styles */
+  body.dark-mode .nav-content {
+    background-color: #1e1e1e; /* Dark background for navbar */
+  }
+  
+  body.dark-mode .nav-content h2 {
+    color: #ff7b00; /* Lighter orange for dark mode */
+  }
+  
+  body.dark-mode .nav-list ul li {
+    color: #d3d3d3; /* Light gray color for text in dark mode */
+  }
+  
+  body.dark-mode .nav-list ul li:hover {
+    color: #ff7b00; /* Hover effect for dark mode links */
+  }
+  
+  body.dark-mode .restaurant-icon {
+    color: #ff7b00; /* Lighter color for the icon in dark mode */
+  }
+  

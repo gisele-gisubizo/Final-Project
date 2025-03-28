@@ -1,34 +1,37 @@
-*{
+/* Global Reset */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.appetizer-part1{
- background-color:  #CC5500;
- color: white;
- font-family: 'Roboto', sans-serif;
- text-align: center;
- height: 150px;
 
-}  
+/* Appetizer Part 1 Styling */
+.appetizer-part1 {
+    background-color: #CC5500;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    height: 150px;
+}
 
-.appetizer-part1 h3{
+.appetizer-part1 h3 {
     padding-top: 20px;
     font-size: 30px;
 }
 
-.appetizer-part1 p{
+.appetizer-part1 p {
     font-size: 13px;
     color: rgb(245, 244, 244);
 }
 
+/* Appetizer Container */
 .appetizers-container {
     padding: 40px;
     text-align: center;
     background-color: #f8f8f8;
 }
 
-
+/* Appetizer List */
 .appetizers-list {
     display: flex;
     flex-wrap: wrap;
@@ -36,6 +39,7 @@
     gap: 20px;
 }
 
+/* Appetizer Item */
 .appetizer-item {
     position: relative;
     width: 300px;
@@ -52,6 +56,7 @@
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Appetizer Price */
 .appetizer-price {
     font-size: 1.2rem;
     font-weight: bold;
@@ -59,6 +64,7 @@
     margin-bottom: 10px; /* Added margin-bottom for spacing */
 }
 
+/* Appetizer Image */
 .appetizer-img {
     width: 80%;
     height: auto;
@@ -66,6 +72,7 @@
     margin-bottom: 10px;
 }
 
+/* Appetizer Name */
 .appetizer-name {
     font-size: 1.2rem;
     font-weight: bold;
@@ -73,13 +80,14 @@
     margin-bottom: 5px;
 }
 
+/* Appetizer Description */
 .appetizer-description {
     font-size: 1rem;
     color: #666;
     margin-bottom: 10px;
 }
 
-
+/* Add to Cart Button */
 .add-to-cart-btn {
     background-color: #CC5500;
     color: white;
@@ -95,31 +103,32 @@
     background-color: #e69500;
 }
 
+/* Cart Container */
 .cart-container {
     margin-top: 30px;
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 8px;
-  }
-  
-  .cart-container h3 {
+}
+
+.cart-container h3 {
     font-size: 24px;
-  }
-  
-  .cart-container ul {
+}
+
+.cart-container ul {
     list-style-type: none;
     padding-left: 0;
-  }
-  
-  .cart-container li {
+}
+
+.cart-container li {
     font-size: 18px;
     margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  .cart-container button.remove-from-cart-btn {
+}
+
+.cart-container button.remove-from-cart-btn {
     background-color: #CC5500;
     color: white;
     border: none;
@@ -127,15 +136,84 @@
     font-size: 14px;
     cursor: pointer;
     border-radius: 5px;
-  }
-  
-  .cart-container button.remove-from-cart-btn:hover {
+}
+
+.cart-container button.remove-from-cart-btn:hover {
     background-color: #e53935;
-  }
-  
-  .cart-container p {
+}
+
+.cart-container p {
     font-size: 18px;
     font-weight: bold;
     margin-top: 15px;
     text-align: right;
-  }
+}
+
+/* Dark Mode Styling */
+body.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+
+/* Dark mode for Appetizer Part 1 */
+.dark-mode .appetizer-part1 {
+    background-color: #FF7043; /* Lighter orange */
+    color: white;
+}
+
+.dark-mode .appetizer-part1 h3, .dark-mode .appetizer-part1 p {
+    color: white;
+}
+
+/* Dark Mode Appetizer Container */
+.dark-mode .appetizers-container {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Dark Mode for Appetizer Item */
+.dark-mode .appetizer-item {
+    background-color: #444;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .appetizer-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark Mode Add to Cart Button */
+.dark-mode .add-to-cart-btn {
+    background-color: #FF7043;
+}
+
+.dark-mode .add-to-cart-btn:hover {
+    background-color: #FF6F20;
+}
+
+/* Dark Mode Cart Container */
+.dark-mode .cart-container {
+    background-color: #333;
+    border-color: #666;
+}
+
+.dark-mode .cart-container h3 {
+    color: #fff;
+}
+
+.dark-mode .cart-container li {
+    color: white;
+}
+
+.dark-mode .cart-container button.remove-from-cart-btn {
+    background-color: #FF7043;
+}
+
+.dark-mode .cart-container button.remove-from-cart-btn:hover {
+    background-color: #FF6F20;
+}
+
+.dark-mode .cart-container p {
+    color: #fff;
+}

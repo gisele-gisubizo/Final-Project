@@ -1,89 +1,162 @@
-*{
+/* Global Reset */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
-
+/* Menu container */
 .menu-container {
     padding: 20px;
     text-align: center;
     background-color: #FFF4E6;
     font-family: 'Roboto', sans-serif;
-  }
-  
-  h1 {
+}
+
+h1 {
     font-size: 3rem;
     color: #333;
     margin-bottom: 20px;
-  }
-  
-  .category {
-    margin-bottom: 40px;
-  }
+}
 
-  .category-menu{
+/* Categories and menu items */
+.category {
+    margin-bottom: 40px;
+}
+
+.category-menu {
     font-size: 1rem;
-    color: #CC5500!important;
+    color: #CC5500 !important;
     margin-bottom: 10px;
-  }
-  
-  h2 {
+}
+
+h2 {
     font-size: 2rem;
     color: #CC5500;
     margin-bottom: 15px;
-  }
-  
-  .menu-items {
+}
+
+.menu-items {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-  }
-  
-  .menu-item {
-    width: 250px;
+}
+
+/* Menu item styling */
+.menu-item {
+    width: 300px; /* Increased width */
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 15px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .menu-item:hover {
+}
+
+.menu-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-  }
-  
-  .menu-img {
+}
+
+/* Menu image styling */
+.menu-img {
     width: 100%;
-    height: auto;
+    height: 150px; /* Fixed height */
+    object-fit: cover; /* Ensure proper scaling */
     border-radius: 8px;
     margin-bottom: 10px;
-  }
-  
-  .menu-details {
+}
+
+/* Menu details */
+.menu-details {
     margin-top: 10px;
-  }
-  
-  .menu-details h3 {
+    min-height: 120px; /* Reserve space for content */
+}
+
+.menu-details h3 {
     font-size: 1.2rem;
     font-weight: bold;
     color: #333;
-  }
-  
-  .menu-details p {
-    font-size: 1rem;
-    color: #666;
     margin-bottom: 5px;
-  }
-  
-  .price {
+}
+
+.menu-details .description {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    display: block;
+    min-height: 40px;
+    overflow-wrap: break-word;
+}
+
+.menu-details .category-menu {
+    font-size: 1rem;
+    color: #CC5500 !important;
+    margin-bottom: 10px;
+}
+
+.price {
     font-size: 1.2rem;
     font-weight: bold;
     color: #CC5500;
     margin-top: 10px;
-  }
-  
+}
+
+/* Body styling */
+body {
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+
+/* Dark mode for menu container and items */
+.dark-mode .menu-container {
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+.dark-mode .category-menu,
+.dark-mode h2,
+.dark-mode h1 {
+    color: #FF7043; /* Lighter orange for dark mode */
+}
+
+.dark-mode .menu-item {
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .menu-img {
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Dark mode button styling */
+.dark-mode-toggle {
+    position: fixed;
+    top: 17px;
+    right: 10px;
+}
+
+.dark-mode-toggle button {
+    padding: 8px 16px;
+    cursor: pointer;
+    background-color: #FF7043; /* Lighter orange */
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+}

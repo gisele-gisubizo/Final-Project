@@ -1,215 +1,284 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  .beverages-part1 {
-    background: url("../assets/back.jpeg");
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  .beverage-container {
-    width: 100%;
-    overflow: hidden;
-  }
-  
-  .beverages-part1 {
-    position: relative;
-    background-image: url('../assets/back.jpeg'); /* Path to your background image */
-    background-size: cover; /* Ensure the image covers the area */
-    background-position: center;
-    height: 250px; /* Adjust the height to your liking */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .overlay-beverage {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay with some transparency */
-    display: flex;
-    flex-direction: column; /* Stack content vertically */
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .overlay-beverage h3 {
-    font-size: 2rem;
-    margin: 0;
-    margin-bottom: 10px; /* Adds some space between h3 and p */
-  }
-  
-  .overlay-beverage p {
-    font-size: 0.8rem;
-    color: rgb(223, 219, 219);
-    margin: 0; /* Removes default margin */
-    margin-top: 5px; /* Adds a little spacing between p and h3 */
-  }
-  
-  .buttons-container {
-    display: flex;
-    justify-content: center; /* Center the buttons horizontally */
-    gap: 30px; /* Adds space between the buttons */
-    margin-top: 20px; /* Adds space below the beverages image */
-    padding: 0 20px; /* Adds padding to the left and right of the container */
-    margin-bottom: 20px;
-  }
-  
-  .beverage-button {
-    background-color: #CC5500; /* Light color */
-   
-    border: none;
-    padding: 8px 16px; /* Adjusted padding for smaller button size */
-    font-size: 1rem; /* Adjust font size if necessary */
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Added transition for text color */
-    flex: 1 1 100px; /* Reduced the minimum width to 100px */
-    text-align: center; /* Ensure text is centered in the button */
-  }
-  
-  .beverage-button:hover {
-    background-color: #CC5500; /* Darker color on hover */
-    color: white !important; /* Ensure the text color changes to white */
-  }
-  
-  .Links-home-beverage {
-    text-decoration: none;
-    color: black;
-  }
-  
+/* Beverages Part 1 Styling */
+.beverages-part1 {
+  background: url("../assets/back.jpeg");
+  font-family: 'Roboto', sans-serif;
+}
+
+.beverage-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.beverages-part1 {
+  position: relative;
+  background-image: url('../assets/back.jpeg'); /* Path to your background image */
+  background-size: cover; /* Ensure the image covers the area */
+  background-position: center;
+  height: 250px; /* Adjust the height to your liking */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay-beverage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay with some transparency */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.overlay-beverage h3 {
+  font-size: 2rem;
+  margin: 0;
+  margin-bottom: 10px; /* Adds some space between h3 and p */
+}
+
+.overlay-beverage p {
+  font-size: 0.8rem;
+  color: rgb(223, 219, 219);
+  margin: 0; /* Removes default margin */
+  margin-top: 5px; /* Adds a little spacing between p and h3 */
+}
+
+/* Buttons Container */
+.buttons-container {
+  display: flex;
+  justify-content: center; /* Center the buttons horizontally */
+  gap: 30px; /* Adds space between the buttons */
+  margin-top: 20px; /* Adds space below the beverages image */
+  padding: 0 20px; /* Adds padding to the left and right of the container */
+  margin-bottom: 20px;
+}
+
+/* Beverage Button */
+.beverage-button {
+  background-color: #CC5500; /* Light color */
+  border: none;
+  padding: 8px 16px; /* Adjusted padding for smaller button size */
+  font-size: 1rem; /* Adjust font size if necessary */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Added transition for text color */
+  flex: 1 1 100px; /* Reduced the minimum width to 100px */
+  text-align: center; /* Ensure text is centered in the button */
+}
+
+.beverage-button:hover {
+  background-color: #CC5500; /* Darker color on hover */
+  color: white !important; /* Ensure the text color changes to white */
+}
+
+/* Links Styling */
+.Links-home-beverage {
+  text-decoration: none;
+  color: black;
+}
+
+/* Beverages List */
 .beverages-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .beverage-item {
-    background-color: #f9f9f9;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 250px;
-    text-align: left;
-  }
-  
-  .beverage-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 15px;
-  }
-  
-  .beverage-item h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-  
-  .beverage-item p {
-    font-size: 1rem;
-    margin: 5px 0;
-  }
-  
-  .price {
-    color: #CC5500; /* Makes the price phrase orange */
-  }
-  
-  .pick-button {
-    background-color: #CC5500; /* Orange color for the Pick button */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 10px;
-    width: 100%;
-  }
-  
-  .pick-button:hover {
-    background-color: #e67e22; /* Darker orange on hover */
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  margin-bottom: 20px;
+}
 
+/* Beverage Item */
+.beverage-item {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  text-align: left;
+}
 
-  .cart-section {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .cart-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .cart-item img {
-    width: 50px;
-    height: 50px;
-    border-radius: 5px;
-    margin-right: 10px;
-  }
-  
-  .cart-item div {
-    flex-grow: 1;
-  }
-  
-  .cart-item h3 {
-    font-size: 16px;
-    margin: 0;
-  }
-  
-  .cart-item p {
-    margin: 5px 0;
-    color: #555;
-  }
-  
-  .remove-btn {
-    background-color: #CC5500;
-    color: white;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background 0.3s ease;
-  }
-  
-  .remove-btn:hover {
-    background-color:darkorange;
-  }
-  
-  .pick-button {
-    background-color:#CC5500 ;
-    color: white;
-    border: none;
-    padding: 8px 14px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background 0.3s ease;
-  }
-  
-  .pick-button:hover {
-    background-color: darkorange;
-  }
+.beverage-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.beverage-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.beverage-item p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.price {
+  color: #CC5500; /* Makes the price phrase orange */
+}
+
+/* Pick Button */
+.pick-button {
+  background-color: #CC5500; /* Orange color for the Pick button */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.pick-button:hover {
+  background-color: #e67e22; /* Darker orange on hover */
+}
+
+/* Cart Section */
+.cart-section {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.cart-item div {
+  flex-grow: 1;
+}
+
+.cart-item h3 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.cart-item p {
+  margin: 5px 0;
+  color: #555;
+}
+
+/* Remove Button */
+.remove-btn {
+  background-color: #CC5500;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.remove-btn:hover {
+  background-color: darkorange;
+}
+
+/* Dark Mode Styling */
+body.dark-mode {
+  background-color: #121212;
+  color: #fff;
+}
+
+/* Dark Mode for Beverages Part 1 */
+.dark-mode .beverages-part1 {
+  background: url("../assets/back.jpeg");
+}
+
+.dark-mode .overlay-beverage {
+  background-color: rgba(0, 0, 0, 0.8); /* Darker overlay */
+}
+
+.dark-mode .overlay-beverage h3,
+.dark-mode .overlay-beverage p {
+  color: white;
+}
+
+/* Dark Mode Buttons */
+.dark-mode .beverage-button {
+  background-color: #FF7043; /* Lighter orange */
+  color: white;
+}
+
+.dark-mode .beverage-button:hover {
+  background-color: #FF6F20;
+}
+
+/* Dark Mode for Beverage List and Items */
+.dark-mode .beverages-list {
+  background-color: #333;
+}
+
+.dark-mode .beverage-item {
+  background-color: #444;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .beverage-item h3,
+.dark-mode .beverage-item p {
+  color: white;
+}
+
+.dark-mode .price {
+  color: #FF7043; /* Lighter orange */
+}
+
+/* Dark Mode Pick Button */
+.dark-mode .pick-button {
+  background-color: #FF7043;
+}
+
+.dark-mode .pick-button:hover {
+  background-color: #FF6F20;
+}
+
+/* Dark Mode Cart Section */
+.dark-mode .cart-section {
+  background-color: #333;
+  color: white;
+}
+
+.dark-mode .cart-item {
+  background-color: #444;
+  color: white;
+}
+
+.dark-mode .remove-btn {
+  background-color: #FF7043;
+}
+
+.dark-mode .remove-btn:hover {
+  background-color: #FF6F20;
+}

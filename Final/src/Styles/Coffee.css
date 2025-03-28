@@ -1,3 +1,4 @@
+/* Coffee Menu Styling */
 .coffee-menu {
   text-align: center;
   padding: 20px;
@@ -10,7 +11,6 @@
   flex-wrap: wrap;
   justify-content: space-around;
   gap: 20px;
-
 }
 
 .coffee-item {
@@ -60,6 +60,7 @@
   background-color: #CC5500; /* Darker orange on hover */
 }
 
+/* Cart Styling */
 .cart {
   margin-top: 20px;
   padding: 10px;
@@ -85,4 +86,65 @@
   padding: 5px 8px;
   cursor: pointer;
   border-radius: 5px;
+}
+
+/* Dark Mode Styling */
+body.dark-mode {
+  background-color: #121212;
+  color: #fff;
+}
+
+/* Dark Mode for Coffee Menu */
+.dark-mode .coffee-menu {
+  color: white;
+}
+
+.dark-mode .coffee-item {
+  background-color: #333;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .coffee-item img {
+  border-radius: 8px;
+}
+
+.dark-mode .coffee-item h3,
+.dark-mode .coffee-item p {
+  color: white;
+}
+
+.dark-mode .price {
+  color: #FF7043; /* Lighter orange for dark mode */
+}
+
+.dark-mode .add-to-cart-btn {
+  background-color: #FF7043; /* Lighter orange for the button */
+}
+
+.dark-mode .add-to-cart-btn:hover {
+  background-color: #FF6F20; /* Darker orange on hover */
+}
+
+/* Dark Mode for Cart */
+.dark-mode .cart {
+  background-color: #333;
+  color: white;
+}
+
+.dark-mode .cart ul {
+  color: white;
+}
+
+.dark-mode .cart li {
+  background-color: #444;
+  color: white;
+}
+
+.dark-mode .cart button {
+  background-color: #FF7043;
+}
+
+.dark-mode .cart button:hover {
+  background-color: #FF6F20;
 }

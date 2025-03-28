@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.my-orders-container {
+    background-color: #FFF4E6;
+    padding: 40px 20px;
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+}
+
+.my-orders-container h1 {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.favorites-section,
+.current-orders-section {
+    margin-bottom: 50px;
+}
+
+.favorites-section h2,
+.current-orders-section h2 {
+    font-size: 2rem;
+    color: #CC5500;
+    margin-bottom: 20px;
+    margin-left: 60px;
+    font-weight: bold;
+}
+
+.order-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    width: 350px;
+    background-color: #f4f4f4; /* Soft gray to match other item cards */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-left: 60px;
+}
+
+.order-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.order-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+.order-details {
+    flex-grow: 1;
+}
+
+.order-name {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.order-description {
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.order-price {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #CC5500;
+    margin-bottom: 10px;
+}
+
+.order-quantity {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.order-status {
+    font-size: 0.9rem;
+    color: #28a745; /* Green for status */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.prep-time {
+    font-size: 0.9rem;
+    color: #CC5500;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.kitchen-message {
+    font-size: 0.9rem;
+    color: #28a745;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.remove-btn {
+    background-color: #CC5500;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.remove-btn:hover {
+    background-color: #b34700;
+}
+
+.order-total {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.order-total p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.confirm-order-btn-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.confirm-order-btn {
+    background-color: #CC5500;
+    color: white;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.confirm-order-btn:hover {
+    background-color: #b34700;
+}
+
+.confirm-order-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+
+.dark-mode .my-orders-container {
+    background-color: #1e1e1e;
+}
+
+.dark-mode .favorites-section h2,
+.dark-mode .current-orders-section h2 {
+    color: #FF7B00; /* Adjusted to match light mode's warm tone */
+}
+
+.dark-mode .order-item {
+    background-color: #2c2c2c; /* Darker background for item cards */
+    color: #bbb; /* Light grey text for better readability */
+}
+
+.dark-mode .order-item:hover {
+    background-color: #3a3a3a;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .order-name,
+.dark-mode .order-description,
+.dark-mode .order-price,
+.dark-mode .order-status {
+    color: #fff; /* White text for order details in dark mode */
+}
+
+.dark-mode .order-price {
+    color: #FF7B00; /* Keeping the same accent color */
+}
+
+.dark-mode .remove-btn {
+    background-color: #FF7B00;
+}
+
+.dark-mode .remove-btn:hover {
+    background-color: #b34700;
+}
+
+.dark-mode .confirm-order-btn {
+    background-color: #FF7B00;
+}
+
+.dark-mode .confirm-order-btn:hover {
+    background-color: #b34700;
+}
+
+.dark-mode .confirm-order-btn:disabled {
+    background-color: #555;
+}

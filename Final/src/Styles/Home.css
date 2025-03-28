@@ -299,3 +299,34 @@ body.dark-mode .dish-description {
 body.dark-mode .dish-price {
   color: #ff7b00; /* Lighter orange in dark mode */
 }
+
+.view-my-orders-btn {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.view-my-orders-btn button {
+  background-color: #CC5500; /* Main theme color */
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.view-my-orders-btn button:hover {
+  background-color: #b34700; /* Slightly darker shade on hover */
+}
+
+/* Dark Mode Support */
+body.dark-mode .view-my-orders-btn button {
+  background-color: #ff7b00; /* Lighter orange in dark mode */
+  color: #fff;
+}
+
+body.dark-mode .view-my-orders-btn button:hover {
+  background-color: #e66a00;
+}

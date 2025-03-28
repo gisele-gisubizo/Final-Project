@@ -1,5 +1,6 @@
 import React from 'react'
 import '../Styles/Footer.css'
+import { Link } from 'react-router-dom';
 import { FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
@@ -17,9 +18,9 @@ function Footer() {
  <div className="company">
 <h4>Quick Links</h4>
 <ul>
-    <li>Menu</li>
-    <li>Kitchen</li>
-    <li>My Orders</li>
+   <Link to='/Menu' className='Link-Footer'> <li>Menu</li></Link>
+   <Link to='/Kitchen' className='Link-Footer'><li>Kitchen</li></Link> 
+   <Link to='/MyOrders' className='Link-Footer'> <li>My Orders</li></Link>
 </ul>
 
  </div>

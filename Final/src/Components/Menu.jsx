@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import axios from "axios";
+import axios from 'axios';
+import { Link } from 'react-router-dom'; // For navigation
 import '../Styles/Menu.css';
 import { ThemeContext } from '../context/ThemeContext'; // Import ThemeContext
 
@@ -67,6 +68,11 @@ function Menu() {
         )
     );
 
+    const handleViewOrders = () => {
+        // Save the cart to localStorage before navigating
+        localStorage.setItem("cartItems", JSON.stringify(cart));
+    };
+
     return (
         <div className="menu-container">
             <h1>Our Menu</h1>
@@ -101,6 +107,15 @@ function Menu() {
                     </div>
                 )}
             </div>
+
+            {/* View in My Orders Button */}
+            {cart.length > 0 && (
+                <div className="view-my-orders-btn">
+                    <Link to="/MyOrders">
+                        <button onClick={handleViewOrders}>View in My Orders</button>
+                    </Link>
+                </div>
+            )}
         </div>
     );
 }

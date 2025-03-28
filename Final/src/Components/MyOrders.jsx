@@ -10,7 +10,7 @@ function MyOrders() {
     const navigate = useNavigate();
     const token = localStorage.getItem("authToken");
     const userData = localStorage.getItem("user");
-    const userId = userData ? JSON.parse(userData)._id : null; // Extract userId
+    const userId = userData ? JSON.parse(userData)._id : null;
 
     // Redirect to login if no token or userId
     useEffect(() => {
@@ -22,7 +22,7 @@ function MyOrders() {
     // Fetch orders only when userId is available
     useEffect(() => {
         const fetchOrders = async () => {
-            if (!userId) return; // Avoid unnecessary fetch if userId is not available
+            if (!userId) return;
 
             try {
                 const response = await fetch(`http://localhost:5000/Order/${userId}`, {
@@ -37,24 +37,24 @@ function MyOrders() {
                 setOrders(data.orders || []);
             } catch (error) {
                 console.error("Error fetching orders:", error);
-                setOrders([]); // Handle case if no orders are fetched
+                setOrders([]);
             }
         };
 
-        fetchOrders(); // Fetch only when userId exists
-    }, [token, userId]); // Only fetch when token or userId changes
+        fetchOrders();
+    }, [token, userId]);
 
     // Retrieve saved cart items from localStorage
     const savedCart = JSON.parse(localStorage.getItem("cartItems")) || [];
 
-    // Group and process orders once they are available
+    // Group and process orders
     useEffect(() => {
-        if (orders.length === 0 && savedCart.length === 0) return; // Avoid running logic if no data
+        if (orders.length === 0 && savedCart.length === 0) return;
 
         const combinedOrders = [...orders, ...savedCart.map(item => ({
             item: item,
-            quantity: 1, // Default to 1 for cart items
-            status: "Pending" // Default status as "Pending"
+            quantity: 1,
+            status: "Pending"
         }))];
 
         const groupItemsByName = () => {
@@ -68,7 +68,6 @@ function MyOrders() {
                 return acc;
             }, {});
 
-            // Separate favorite foods (ordered more than twice) and current orders
             const favorite = [];
             const current = [];
             let totalPrice = 0;
@@ -87,19 +86,17 @@ function MyOrders() {
             setTotal(totalPrice);
         };
 
-        groupItemsByName(); // Group and set state based on combined orders
-    }, [orders, savedCart]); // Only run if orders or savedCart change
+        groupItemsByName();
+    }, [orders, savedCart]);
 
     // Handle Confirm Order button click
     const handleConfirmOrder = () => {
-        // Save only the user's name in localStorage (not the orders)
-        const userName = JSON.parse(localStorage.getItem("user")).name;
-        localStorage.setItem("userName", userName);
+        const userData = JSON.parse(localStorage.getItem("user"));
+        if (userData && userData.name) {
+            localStorage.setItem("kitchenUser", JSON.stringify({ name: userData.name }));
+        }
 
-        // Clear the saved cart from localStorage (so it doesn't carry over)
         localStorage.removeItem("cartItems");
-
-        // Show success message and navigate to Kitchen
         alert("Your order has been saved successfully!");
         navigate('/Kitchen');
     };
@@ -108,7 +105,6 @@ function MyOrders() {
         <div className="my-orders-container">
             <h2>My Orders</h2>
 
-            {/* Favorite Foods Section */}
             <section className="favorite-foods">
                 <h3>Favorite Foods</h3>
                 {favoriteFoods.length === 0 ? (
@@ -130,7 +126,6 @@ function MyOrders() {
                 )}
             </section>
 
-            {/* Ordered Now Section */}
             <section className="ordered-now">
                 <h3>Ordered Now</h3>
                 {currentOrders.length === 0 ? (
@@ -152,7 +147,6 @@ function MyOrders() {
                 )}
             </section>
 
-            {/* Total Section */}
             <section className="total-section">
                 <h3>Total: ${total.toFixed(2)}</h3>
                 <button className="confirm-order-btn" onClick={handleConfirmOrder}>

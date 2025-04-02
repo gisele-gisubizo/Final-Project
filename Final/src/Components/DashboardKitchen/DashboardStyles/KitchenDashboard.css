@@ -1,0 +1,387 @@
+/* General Dashboard Styles */
+.kitchen-dashboard {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    background-color: #FFEFD5; /* Papaya whip background */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-height: 100vh;
+}
+
+.kitchen-dashboard h2 {
+    font-size: 2.5rem;
+    color: #D2691E; /* Chocolate orange for headings */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Tabs Styles */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.tabs button {
+    background-color: #FFFFFF;
+    color: #D2691E;
+    border: 2px solid #D2691E;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tabs button:hover {
+    background-color: #D2691E;
+    color: #FFFFFF;
+}
+
+.tabs button.active {
+    background-color: #D2691E;
+    color: #FFFFFF;
+}
+
+/* Common Styles for All Sections */
+.dashboard-section {
+    background-color: #FFFFFF !important; /* Force white background in light mode */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-section h3 {
+    font-size: 1.8rem;
+    color: #D2691E;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* No Data Message */
+.no-data {
+    font-size: 1rem;
+    color: #333333;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Orders Overview and Assigned Orders Sections */
+.orders-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.order-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.order-card:hover {
+    transform: translateY(-5px);
+}
+
+.order-card h4 {
+    font-size: 1.2rem;
+    color: #D2691E;
+    margin-bottom: 10px;
+}
+
+.order-card p {
+    font-size: 0.95rem;
+    color: #333333;
+    margin: 5px 0;
+}
+
+.order-card p strong {
+    color: #D2691E;
+}
+
+.order-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.order-actions button {
+    background-color: #D2691E;
+    color: #FFFFFF;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.order-actions button:hover {
+    background-color: #A0522D; /* Sienna on hover */
+}
+
+.message-section {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.message-section input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #E0E0E0;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.message-section button {
+    background-color: #D2691E;
+    color: #FFFFFF;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.message-section button:hover {
+    background-color: #A0522D;
+}
+
+/* Notifications Section */
+.notifications-list {
+    list-style: none;
+    padding: 0;
+}
+
+.notifications-list li {
+    background-color: #F9F9F9;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    color: #333333;
+    border-left: 4px solid #D2691E;
+}
+
+/* Add Dishes Section */
+.add-dishes-section .error-message {
+    color: #FF4500;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.add-dish-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-size: 1rem;
+    color: #D2691E;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 8px;
+    border: 1px solid #E0E0E0;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    color: #333333;
+}
+
+.form-group input[type="file"] {
+    padding: 3px; /* Adjust padding for file input */
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.add-dish-form button {
+    background-color: #D2691E;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-dish-form button:hover {
+    background-color: #A0522D;
+}
+
+.add-dish-form button:disabled {
+    background-color: #A9A9A9;
+    cursor: not-allowed;
+}
+
+/* Existing Dishes List */
+.dishes-list {
+    margin-top: 30px;
+}
+
+.dishes-list h4 {
+    font-size: 1.2rem;
+    color: #D2691E;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.dishes-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.dishes-list li {
+    background-color: #F9F9F9;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    color: #333333;
+    border-left: 4px solid #D2691E;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dishes-list li span {
+    font-size: 0.85rem;
+    color: #666666;
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .kitchen-dashboard {
+        padding: 15px;
+    }
+
+    .tabs {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .tabs button {
+        width: 100%;
+    }
+
+    .orders-list {
+        grid-template-columns: 1fr;
+    }
+
+    .add-dish-form {
+        max-width: 100%;
+    }
+}
+
+/* Dark Mode Styles */
+body.dark-mode .kitchen-dashboard {
+    background-color: #2A2A2A;
+    color: #FFFFFF;
+}
+
+body.dark-mode .kitchen-dashboard h2,
+body.dark-mode .dashboard-section h3,
+body.dark-mode .order-card h4,
+body.dark-mode .order-card p strong,
+body.dark-mode .form-group label,
+body.dark-mode .dishes-list h4 {
+    color: #FF8C00; /* Dark orange for headings in dark mode */
+}
+
+body.dark-mode .tabs button {
+    background-color: #3A3A3A;
+    color: #FF8C00;
+    border-color: #FF8C00;
+}
+
+body.dark-mode .tabs button:hover,
+body.dark-mode .tabs button.active {
+    background-color: #FF8C00;
+    color: #FFFFFF;
+}
+
+body.dark-mode .dashboard-section,
+body.dark-mode .order-card {
+    background-color: #2F2F2F !important; /* Lighter "watery black" for dark mode */
+    border-color: #555555;
+}
+
+body.dark-mode .order-card p,
+body.dark-mode .notifications-list li,
+body.dark-mode .no-data,
+body.dark-mode .form-group input,
+body.dark-mode .form-group select,
+body.dark-mode .form-group textarea,
+body.dark-mode .dishes-list li {
+    color: #CCCCCC;
+}
+
+body.dark-mode .order-actions button,
+body.dark-mode .message-section button,
+body.dark-mode .add-dish-form button {
+    background-color: #FF8C00;
+}
+
+body.dark-mode .order-actions button:hover,
+body.dark-mode .message-section button:hover,
+body.dark-mode .add-dish-form button:hover {
+    background-color: #E07B00;
+}
+
+body.dark-mode .message-section input,
+body.dark-mode .form-group input,
+body.dark-mode .form-group select,
+body.dark-mode .form-group textarea {
+    background-color: #4A4A4A;
+    color: #FFFFFF;
+    border-color: #666666;
+}
+
+body.dark-mode .notifications-list li,
+body.dark-mode .dishes-list li {
+    background-color: #4A4A4A;
+    border-left-color: #FF8C00;
+}
+
+body.dark-mode .dishes-list li span {
+    color: #999999;
+}
+
+body.dark-mode .add-dish-form button:disabled {
+    background-color: #666666;
+}
+.error-message {
+    color: red;
+    margin: 10px 0;
+    text-align: center;
+}

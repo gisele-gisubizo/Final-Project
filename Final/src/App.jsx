@@ -14,7 +14,8 @@ import ProtectedRoute from './Components/ProtectedRoute.jsx'; // Protect routes
 import MyOrders from './Components/Myorders.jsx';
 import Kitchen from './Components/Kitchen.jsx'
 import { ThemeProvider } from './context/ThemeContext.jsx';
-
+import KitchenDashboard from './Components/DashboardKitchen/KitchenDashboard.Jsx';
+import AdminDashboard from './Components/DashboardKitchen/AdminDashboard.jsx';
 function App() {
   const [count, setCount] = useState(0);
 
@@ -36,6 +37,8 @@ function App() {
             <Route path='/MyOrders' element={<MyOrders />} />
             <Route path='/Kitchen' element={<Kitchen />} />
           </Route>
+          <Route path='/kitchenDashboard' element={<KitchenDashboard />} />
+          <Route path='/admindashboard' element={<AdminDashboard />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

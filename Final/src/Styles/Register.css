@@ -1,3 +1,4 @@
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -25,23 +26,22 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6); /* Darkened overlay */
-  backdrop-filter: blur(10px); /* Soft blur effect */
+  backdrop-filter: blur(12px); /* Soft blur effect */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Adjusted Register Box Size */
+/* Register Box Styling */
 .register-box {
-  background: rgba(255, 255, 255, 0.9); /* Slight transparency */
-  width: 80%; /* Make it wider */
-  max-width: 450px; /* Allow it to grow a bit */
-  padding: 2em 3em; /* Adjust padding to reduce height */
-  border-radius: 15px;
-  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.85); /* Slight transparency */
+  width: 90%;
+  max-width: 350px; /* Made the box smaller */
+  padding: 2em 2.5em;
+  border-radius: 12px;
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
   text-align: center;
-  transition: 0.3s ease-in-out;
-  overflow: hidden; /* Prevent any overflowing content */
+  transition: transform 0.3s ease-in-out;
 }
 
 /* Smooth Hover Effect */
@@ -51,49 +51,81 @@
 
 /* Title Styling */
 .register-box h2 {
-  font-size: 2rem; /* Slightly smaller to match login */
+  font-size: 1.8rem; /* Adjusted to fit better */
   margin-bottom: 0.5rem;
   color: #CC5500;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /* Subtitle */
 .register-box h4 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #CC5500;
-  margin-bottom: 20px; /* Adjust margin to make it fit better */
+  margin-bottom: 25px;
+  font-weight: 500;
 }
 
-/* Input Fields */
+/* Error Message */
+.error-message {
+  color: #ff4d4d;
+  font-size: 14px;
+  font-weight: bold;
+  background: rgba(255, 0, 0, 0.1);
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 12px;
+}
+
+/* Form Inputs */
 .register-inputs {
   display: flex;
   flex-direction: column;
-  gap: 15px; /* Reduced gap between inputs */
+  gap: 15px;
   align-items: center;
+  width: 100%;
 }
 
-.register-inputs input {
+/* Input Fields */
+.register-inputs input,
+.register-inputs select {
   width: 100%;
   height: 48px;
   outline: none;
   border: 2px solid #FFDAB9;
-  border-radius: 10px;
+  border-radius: 8px;
   padding-left: 15px;
   font-size: 16px;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.8);
   transition: all 0.3s ease-in-out;
 }
 
 /* Input Focus Effect */
-.register-inputs input:focus {
+.register-inputs input:focus,
+.register-inputs select:focus {
   border-color: #CC5500;
-  box-shadow: 0px 0px 12px rgba(255, 107, 107, 0.5);
+  box-shadow: 0px 0px 10px rgba(255, 107, 107, 0.5);
   background: white;
 }
 
-/* Enhanced Button */
-.register-button-container button {
+/* Custom Select Styling */
+.register-inputs select {
+  appearance: none;
+  cursor: pointer;
+  background: white;
+  border: 2px solid #FFDAB9;
+  font-size: 16px;
+  color: #333;
+  padding-left: 15px;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23333' d='M2 0L0 2h4z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+}
+
+/* Submit Button Styling */
+button {
   width: 100%;
   height: 50px;
   border-radius: 25px;
@@ -102,14 +134,14 @@
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out, transform 0.2s;
   border: none;
   margin-top: 15px;
-  box-shadow: 0px 5px 15px rgba(60, 60, 60, 0.4);
+  box-shadow: 0px 5px 15px rgba(60, 60, 60, 0.2);
 }
 
 /* Button Hover Effect */
-.register-button-container button:hover {
+button:hover {
   background: linear-gradient(to right, #ffcc00, #ff6b6b);
   transform: scale(1.05);
 }
@@ -117,7 +149,8 @@
 /* Text Below Form */
 .register-box p {
   margin-top: 20px;
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .register-link {
@@ -130,4 +163,30 @@
 .register-link:hover {
   text-decoration: underline;
   color: #ffcc00;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 500px) {
+  .register-box {
+    width: 90%;
+    padding: 2em;
+  }
+
+  .register-box h2 {
+    font-size: 1.6rem;
+  }
+
+  .register-box h4 {
+    font-size: 1rem;
+  }
+
+  .register-inputs input,
+  .register-inputs select {
+    height: 44px;
+    font-size: 15px;
+  }
+
+  button {
+    font-size: 16px;
+  }
 }

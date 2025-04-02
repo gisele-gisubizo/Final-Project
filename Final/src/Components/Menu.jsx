@@ -12,6 +12,7 @@ function Menu() {
     const [cart, setCart] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [itemCount, setItemCount] = useState({}); // Store count of items added to the cart
 
     useEffect(() => {
         const fetchMenuItems = async () => {
@@ -38,12 +39,40 @@ function Menu() {
     }, []);
 
     const handleAddToCart = (item) => {
-        setCart((prevCart) => [...prevCart, item]);
+        setCart((prevCart) => {
+            const newCart = [...prevCart, item];
+            const newItemCount = { ...itemCount };
+            newItemCount[item._id] = (newItemCount[item._id] || 0) + 1; // Increment count for this item
+
+            // If item count exceeds 2, mark it as a favorite
+            if (newItemCount[item._id] > 2) {
+                item.isFavorite = true; // Mark as favorite
+            } else {
+                item.isFavorite = false;
+            }
+
+            setItemCount(newItemCount); // Update item count
+
+            return newCart;
+        });
         window.scrollTo(0, document.body.scrollHeight);
     };
 
     const handleRemoveFromCart = (index) => {
-        setCart((prevCart) => prevCart.filter((_, i) => i !== index));
+        setCart((prevCart) => {
+            const item = prevCart[index];
+            const newItemCount = { ...itemCount };
+            newItemCount[item._id] = (newItemCount[item._id] || 0) - 1; // Decrement count for this item
+
+            // If the item count goes below 2, unmark it as favorite
+            if (newItemCount[item._id] <= 2) {
+                item.isFavorite = false;
+            }
+
+            setItemCount(newItemCount); // Update item count
+
+            return prevCart.filter((_, i) => i !== index);
+        });
     };
 
     const renderMenuItems = (categoryName, items) => (
@@ -59,6 +88,7 @@ function Menu() {
                                 <p>{item.description}</p>
                                 <p className="category-menu">{item.category}</p>
                                 <p className="price">${parseFloat(item.price.replace('$', '')).toFixed(2)}</p>
+                                {item.isFavorite && <p className="favorite">❤️ Favorite</p>}
                                 <button className="add-to-cart-btn" onClick={() => handleAddToCart(item)}>Add to Cart</button>
                             </div>
                         </div>

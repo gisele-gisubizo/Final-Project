@@ -23,7 +23,7 @@ function App() {
     <ThemeProvider>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<LoginPage />} />
+          <Route path='' index element={<LoginPage />} />
           <Route path='/LoginPage' element={<LoginPage />} />
           <Route path='/Register' element={<Register />} />
       

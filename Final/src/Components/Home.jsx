@@ -2,11 +2,11 @@ import React, { useState, useEffect, useContext } from 'react';
 import { FaBurger, FaWineGlass, FaIceCream, FaPizzaSlice } from "react-icons/fa6";
 import { Link, useNavigate } from 'react-router-dom';
 import eat1 from '../assets/eat1.jpeg';
-import { ThemeContext } from '../context/ThemeContext'; // Import ThemeContext
+import { ThemeContext } from '../context/ThemeContext';
 import '../Styles/Home.css';
 
 function Home() {
-    const { isDarkMode } = useContext(ThemeContext); // Get dark mode state from context
+    const { isDarkMode } = useContext(ThemeContext);
     const [cart, setCart] = useState([]);
     const [popularDishes, setPopularDishes] = useState([]);
     const navigate = useNavigate();
@@ -21,7 +21,6 @@ function Home() {
                 const data = await response.json();
                 console.log("API Response:", data);
 
-                // Ensure data contains homeItems array
                 const dishes = data.homeItems;
                 if (Array.isArray(dishes)) {
                     setPopularDishes(dishes);
@@ -34,7 +33,7 @@ function Home() {
         };
 
         fetchDishes();
-    }, []); // Empty dependency array to fetch only once
+    }, []);
 
     const handleAddToCart = (dish) => {
         setCart((prevCart) => [...prevCart, dish]);
@@ -61,7 +60,7 @@ function Home() {
                     <img src={eat1} alt="Dining" />
                 </div>
                 <div className="home-button">
-                    <button type="submit" className="view-menu-btn">
+                    <button className="view-menu-btn">
                         <Link to="/Menu" className="Links-home-menu">View Menu</Link>
                     </button>
                 </div>
@@ -72,17 +71,14 @@ function Home() {
                     <FaBurger className="icon" />
                     <Link to="/Home" className="Links-home"><p>Main Course</p></Link>
                 </div>
-
                 <div className="appetizers">
                     <FaPizzaSlice className="icon" />
                     <Link to="/Appetizer" className="Links-home"><p>Appetizers</p></Link>
                 </div>
-
                 <div className="beverages">
                     <FaWineGlass className="icon" />
                     <Link to="/Beverage" className="Links-home"><p>Beverages</p></Link>
                 </div>
-
                 <div className="desserts">
                     <FaIceCream className="icon" />
                     <Link to="/Desserts" className="Links-home"><p>Desserts</p></Link>
@@ -134,10 +130,11 @@ function Home() {
                 )}
             </div>
 
-            {/* Conditionally render the "View in My Orders" button */}
             {cart.length > 0 && (
                 <div className="view-my-orders-btn">
-                    <button onClick={handleViewOrders}>View in My Orders</button>
+                    <button className="view-my-orders-btn-inner" onClick={handleViewOrders}>
+                        View in My Orders
+                    </button>
                 </div>
             )}
         </div>

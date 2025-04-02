@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../DashboardKitchen/DashboardStyles/KitchenDashboard.css';
+import './DashboardStyles/KitchenDashboard.css';
 
 function AdminDashboard() {
     const [staff, setStaff] = useState([]);
@@ -17,7 +17,9 @@ function AdminDashboard() {
         name: '', 
         price: '', 
         description: '',
-        category: ''
+        category: '',
+        image: [], // Changed to array to match schema
+        available: true // Added to match schema
     });
     const [error, setError] = useState('');
     const navigate = useNavigate();
@@ -56,7 +58,14 @@ function AdminDashboard() {
         fetchStaff();
     }, [token]);
 
-    // Fetch menu items function (with enhanced debugging)
+    // Fetch menu items when switching to 'menu' tab
+    useEffect(() => {
+        if (currentTab === 'menu') {
+            fetchMenuItems();
+        }
+    }, [currentTab, token]);
+
+    // Fetch menu items function
     const fetchMenuItems = async () => {
         setError('');
         try {
@@ -73,7 +82,7 @@ function AdminDashboard() {
             console.log('Raw response data:', data);
 
             if (response.ok) {
-                const items = Array.isArray(data) ? data : (data.data && Array.isArray(data.data) ? data.data : []);
+                const items = data.menuItems && Array.isArray(data.menuItems) ? data.menuItems : [];
                 console.log('Processed menu items:', items);
                 setMenuItems(items);
                 if (items.length === 0) {
@@ -88,6 +97,12 @@ function AdminDashboard() {
             setMenuItems([]);
             console.error('Fetch menu items error:', error);
         }
+    };
+
+    // Handle file input for images
+    const handleImageChange = (e) => {
+        const files = Array.from(e.target.files);
+        setNewMenuItem({ ...newMenuItem, image: files });
     };
 
     // Add new staff member
@@ -196,26 +211,29 @@ function AdminDashboard() {
         e.preventDefault();
         setError('');
         try {
-            if (!newMenuItem.name || !newMenuItem.price || !newMenuItem.description || !newMenuItem.category) {
-                setError('All fields (name, price, description, category) are required.');
+            if (!newMenuItem.name || !newMenuItem.price || !newMenuItem.description || !newMenuItem.category || newMenuItem.image.length === 0) {
+                setError('All fields (name, price, description, category, image) are required.');
                 return;
             }
 
-            const menuData = {
-                name: newMenuItem.name,
-                price: parseFloat(newMenuItem.price),
-                description: newMenuItem.description,
-                category: newMenuItem.category
-            };
-            console.log('Adding menu item with data:', menuData);
+            const formData = new FormData();
+            formData.append('name', newMenuItem.name);
+            formData.append('price', parseFloat(newMenuItem.price));
+            formData.append('description', newMenuItem.description);
+            formData.append('category', newMenuItem.category);
+            formData.append('available', newMenuItem.available);
+            newMenuItem.image.forEach((file, index) => {
+                formData.append('image', file);
+            });
+
+            console.log('Adding menu item with data:', [...formData.entries()]);
 
             const response = await fetch('http://localhost:5000/MenuItem/AddMenu', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`,
                 },
-                body: JSON.stringify(menuData),
+                body: formData,
             });
             const data = await response.json();
             console.log('Add menu item response:', data);
@@ -223,7 +241,7 @@ function AdminDashboard() {
             if (response.ok) {
                 if (data && data._id) {
                     setMenuItems([...menuItems, data]);
-                    setNewMenuItem({ name: '', price: '', description: '', category: '' });
+                    setNewMenuItem({ name: '', price: '', description: '', category: '', image: [], available: true });
                     alert('Menu item added successfully!');
                 } else {
                     setError('Invalid menu item data received from server.');
@@ -298,10 +316,10 @@ function AdminDashboard() {
     };
 
     return (
-        <div className="kitchen-dashboard">
+        <div className="admin-dashboard">
             <h2>Admin Dashboard</h2>
-            {error && <p className="error-message">{error}</p>}
-            <div className="tabs">
+            {error && <p className="admin-error-message">{error}</p>}
+            <div className="admin-tabs">
                 <button className={currentTab === 'staff' ? 'active' : ''} onClick={() => setCurrentTab('staff')}>
                     Manage Staff
                 </button>
@@ -312,10 +330,10 @@ function AdminDashboard() {
 
             {/* Manage Staff Section */}
             {currentTab === 'staff' && (
-                <div className="dashboard-section">
+                <div className="admin-dashboard-section">
                     <h3>Manage Staff</h3>
-                    <form className="add-dish-form" onSubmit={addStaff}>
-                        <div className="form-group">
+                    <form className="admin-add-dish-form" onSubmit={addStaff}>
+                        <div className="admin-form-group">
                             <label>First Name</label>
                             <input
                                 type="text"
@@ -324,7 +342,7 @@ function AdminDashboard() {
                                 required
                             />
                         </div>
-                        <div className="form-group">
+                        <div className="admin-form-group">
                             <label>Last Name</label>
                             <input
                                 type="text"
@@ -333,7 +351,7 @@ function AdminDashboard() {
                                 required
                             />
                         </div>
-                        <div className="form-group">
+                        <div className="admin-form-group">
                             <label>Email</label>
                             <input
                                 type="email"
@@ -343,7 +361,7 @@ function AdminDashboard() {
                                 placeholder="e.g., staff@example.com"
                             />
                         </div>
-                        <div className="form-group">
+                        <div className="admin-form-group">
                             <label>Role</label>
                             <select
                                 value={newStaff.role}
@@ -354,7 +372,7 @@ function AdminDashboard() {
                             </select>
                         </div>
                         {newStaff.role === 'waiter' && (
-                            <div className="form-group">
+                            <div className="admin-form-group">
                                 <label>Shift</label>
                                 <select
                                     value={newStaff.shift}
@@ -369,10 +387,10 @@ function AdminDashboard() {
                         )}
                         <button type="submit">Add Staff Member</button>
                     </form>
-                    <div className="dishes-list">
+                    <div className="admin-dishes-list">
                         <h4>Current Staff</h4>
                         {staff.length === 0 ? (
-                            <p className="no-data">No staff members available.</p>
+                            <p className="admin-no-data">No staff members available.</p>
                         ) : (
                             <ul>
                                 {staff.map(member => (
@@ -415,10 +433,10 @@ function AdminDashboard() {
 
             {/* Manage Menu Section */}
             {currentTab === 'menu' && (
-                <div className="dashboard-section">
+                <div className="admin-dashboard-section">
                     <h3>Manage Menu Items</h3>
-                    <form className="add-dish-form" onSubmit={addMenuItem}>
-                        <div className="form-group">
+                    <form className="admin-add-dish-form" onSubmit={addMenuItem}>
+                        <div className="admin-form-group">
                             <label>Name</label>
                             <input
                                 type="text"
@@ -427,7 +445,7 @@ function AdminDashboard() {
                                 required
                             />
                         </div>
-                        <div className="form-group">
+                        <div className="admin-form-group">
                             <label>Price ($)</label>
                             <input
                                 type="number"
@@ -438,7 +456,7 @@ function AdminDashboard() {
                                 step="0.01"
                             />
                         </div>
-                        <div className="form-group">
+                        <div className="admin-form-group">
                             <label>Description</label>
                             <textarea
                                 value={newMenuItem.description}
@@ -446,7 +464,7 @@ function AdminDashboard() {
                                 required
                             />
                         </div>
-                        <div className="form-group">
+                        <div className="admin-form-group">
                             <label>Category</label>
                             <select
                                 value={newMenuItem.category}
@@ -454,24 +472,49 @@ function AdminDashboard() {
                                 required
                             >
                                 <option value="">Select Category</option>
-                                <option value="appetizer">Appetizer</option>
-                                <option value="main">Main</option>
-                                <option value="dessert">Dessert</option>
-                                <option value="beverage">Beverage</option>
+                                <option value="Main Course">Main Course</option>
+                                <option value="Appetizer">Appetizer</option>
+                                <option value="Dessert">Dessert</option>
+                                <option value="Beverage">Beverage</option>
                             </select>
+                        </div>
+                        <div className="admin-form-group">
+                            <label>Image(s)</label>
+                            <input
+                                type="file"
+                                multiple
+                                onChange={handleImageChange}
+                                required
+                            />
+                        </div>
+                        <div className="admin-form-group">
+                            <label>Available</label>
+                            <input
+                                type="checkbox"
+                                checked={newMenuItem.available}
+                                onChange={(e) => setNewMenuItem({ ...newMenuItem, available: e.target.checked })}
+                            />
                         </div>
                         <button type="submit">Add Menu Item</button>
                     </form>
-                    <div className="dishes-list">
+                    <div className="admin-dishes-list">
                         <button onClick={fetchMenuItems}>Fetch Current Menu Items</button>
                         {menuItems.length === 0 ? (
-                            <p className="no-data">No menu items fetched yet. Click the button above to load them.</p>
+                            <p className="admin-no-data">No menu items fetched yet. Click the button above to load them.</p>
                         ) : (
                             <ul>
                                 {menuItems.map(item => (
                                     <li key={item._id}>
-                                        {item.name} - ${item.price} - {item.description} ({item.category})
+                                        {item.name} - ${item.price} - {item.description} ({item.category}) - 
+                                        {item.available ? 'Available' : 'Unavailable'}
                                         <div>
+                                            {item.image && item.image.length > 0 && (
+                                                <img
+                                                    src={item.image[0]} // Assuming image is a URL array from the backend
+                                                    alt={item.name}
+                                                    style={{ width: '50px', height: '50px', marginRight: '10px' }}
+                                                />
+                                            )}
                                             <button
                                                 onClick={() => updateMenuItem(item._id, { available: !item.available })}
                                             >

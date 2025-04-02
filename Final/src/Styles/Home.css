@@ -42,10 +42,10 @@ html, body {
   background-color: #CC5500;
   color: white;
   border: none;
-  padding: 12px 24px;
+  padding: 10px 20px; /* Adjusted from 12px 24px */
   cursor: pointer;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 15px; /* Adjusted from 16px */
   font-weight: bold;
   transition: background-color 0.3s ease;
   margin-left: -90px;
@@ -67,7 +67,7 @@ html, body {
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background-color: #f4f4f4; /* Soft gray to match item cards */
+  background-color: #f4f4f4;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   width: 250px;
@@ -114,7 +114,7 @@ html, body {
   border: 1px solid #ccc;
   padding: 15px;
   border-radius: 8px;
-  background-color: #f4f4f4; /* Soft gray for item cards */
+  background-color: #f4f4f4;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -142,7 +142,7 @@ html, body {
 
 .dish-description {
   font-size: 0.875rem;
-  color: #777; /* Softer gray for description text */
+  color: #777;
   margin-bottom: 10px;
 }
 
@@ -153,7 +153,7 @@ html, body {
 }
 
 .add-to-cart-btn {
-  background-color: #CC5500 !important;
+  background-color: #CC5500;
   color: white;
   font-size: 1rem;
   font-weight: bold;
@@ -218,10 +218,10 @@ html, body {
   background-color: #CC5500;
   color: white;
   border: none;
-  padding: 6px 12px;
+  padding: 8px 16px; /* Adjusted from 6px 12px */
   border-radius: 5px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 15px; /* Adjusted from 14px */
   transition: background 0.3s ease;
 }
 
@@ -229,23 +229,24 @@ html, body {
   background-color: #6f0606;
 }
 
-.view-in-my-orders-btn {
+.view-my-orders-btn {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.view-my-orders-btn-inner {
   background-color: #CC5500;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 20px; /* Adjusted from 12px 24px */
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 15px; /* Adjusted from 16px */
   font-weight: bold;
   transition: background-color 0.3s ease;
-  margin-top: 20px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-.view-in-my-orders-btn:hover {
+.view-my-orders-btn-inner:hover {
   background-color: #b34700;
 }
 
@@ -284,49 +285,26 @@ body.dark-mode {
 
 /* Dark Mode Styles */
 body.dark-mode .home-part2 div {
-  background-color: #2a2a2a; /* Darker gray for dark mode cards */
+  background-color: #2a2a2a;
 }
 
 body.dark-mode .dish-item {
-  background-color: #2a2a2a; /* Darker gray for dark mode item cards */
+  background-color: #2a2a2a;
 }
 
 body.dark-mode .dish-name,
 body.dark-mode .dish-description {
-  color: #ccc; /* Lighter gray for text */
+  color: #ccc;
 }
 
 body.dark-mode .dish-price {
-  color: #ff7b00; /* Lighter orange in dark mode */
+  color: #ff7b00;
 }
 
-.view-my-orders-btn {
-  text-align: center;
-  margin-top: 20px;
+body.dark-mode .view-my-orders-btn-inner {
+  background-color: #ff7b00;
 }
 
-.view-my-orders-btn button {
-  background-color: #CC5500; /* Main theme color */
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.view-my-orders-btn button:hover {
-  background-color: #b34700; /* Slightly darker shade on hover */
-}
-
-/* Dark Mode Support */
-body.dark-mode .view-my-orders-btn button {
-  background-color: #ff7b00; /* Lighter orange in dark mode */
-  color: #fff;
-}
-
-body.dark-mode .view-my-orders-btn button:hover {
+body.dark-mode .view-my-orders-btn-inner:hover {
   background-color: #e66a00;
 }
